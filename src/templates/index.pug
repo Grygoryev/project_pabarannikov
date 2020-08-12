@@ -6,10 +6,12 @@ head
   meta(http-equiv='x-ua-compatible', content='ie=edge')
 //-   link(rel="shortcut icon" type="image/png" href="/img/lp-logo.jpg")
 
-body.body
+body
   include ./components/header.pug
   include ./sections/intro.pug
+  include ./sections/program.pug
 
   include ./components/footer.pug
+  include ./components/icons.pug
 
   script(type="module" src="js/index.js")
