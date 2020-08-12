@@ -1,0 +1,24 @@
+.respond-min(@width) {
+  @media (min-width: @width) {
+    @content();
+  }
+}
+
+.flex(@jc: space-between, @ai: center, @ff: row wrap) {
+  display: flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-flow: @ff;
+}
+
+.inline-flex(@jc: space-between, @ai: center, @ff: row wrap) {
+  display: inline-flex;
+  justify-content: @jc;
+  align-items: @ai;
+  flex-flow: @ff;
+}
+
+.font(@fs: 16px, @lh: 1.2) {
+  font-size: @fs;
+  line-height: @lh;
+}
