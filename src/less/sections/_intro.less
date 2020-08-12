@@ -1,7 +1,94 @@
 .intro {
+  padding: 24px 0 16px;
+
+  &__container {
+    background-image: url("../img/mob/intro-bg@2x.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 240px;
+  }
+
+  &__main {
+    width: 70%;
+  }
+
+  &__sup-title {
+    .font(12px);
+    color: @color-purple;
+    text-transform: uppercase;
+    font-family: @font-montserrat-bold;
+
+    margin-bottom: 4px;
+  }
+
+  &__title {
+    .flex(flex-start, flex-start, column nowrap);
+    margin-bottom: 13px;
+  }
+
+  &__sub-title {
+    .font(16px, 1.5);
+    color: @color-black;
+
+    .flex(flex-start, flex-start, column nowrap);
+    margin-bottom: 38px;
+  }
 
   &__apply-btn {
     color: @color-white;
     background-color: #FF3D4B;
+  }
+}
+
+.intro-prices {
+  .flex(space-betwenn, flex-start, column nowrap);
+  margin-bottom: 31px;
+
+  &__prev {
+    color: rgba(@color-red, 0.4);
+    font-weight: bold;
+
+    position: relative;
+    display: inline-block;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 80%;
+      height: 1px;
+      background-color: #FF3D4B;
+      transform: rotate(-166.22deg) translateY(-50%);
+    }
+
+    span {
+      transform: scale(0.66);
+      position: absolute;
+      right: -10px;
+      bottom: 0;
+    }
+  }
+
+  &__current {
+    .font(48px, 59px);
+    font-family: @font-montserrat-bold;
+    font-weight: bold;
+    color: @color-red;
+
+    position: relative;
+    display: inline-block;
+
+    span {
+      transform: scale(0.44);
+      position: absolute;
+      right: -25px;
+      top: -10px;
+    }
+  }
+
+  &__discount {
+    display: flex;
+    flex-direction: column;
   }
 }
