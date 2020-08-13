@@ -1,0 +1,99 @@
+.course-type {
+  padding-top: 38px;
+  padding-bottom: 35px;
+
+  &__container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__title {
+    .flex(flex-start, flex-start, column nowrap);
+    margin-bottom: 12px;
+    .padding_on_side();
+  }
+
+  &__benefits {
+    background-image: url("../img/mob/course-benefits_online.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding-top: 108px;
+    padding-bottom: 40px;
+
+    transition: 300ms all;
+
+    &._offline {
+      background-image: url("../img/mob/course-benefits_offline.png");
+      padding-top: 50px;
+      padding-bottom: 130px;
+    }
+  }
+
+  li {
+    .font(16px, 20px);
+    font-family: @font-montserrat-light;
+    color: @color-white;
+
+    .flex_column();
+    .padding_on_side();
+    position: relative;
+    margin-bottom: 12px;
+
+    &::before {
+      content: '—';
+      color: currentColor;
+      position: absolute;
+      top: -2px;
+      left: -6px;
+      width: 5px;
+      height: 1px;
+    }
+    span {
+      color: currentColor;
+    }
+  }
+}
+
+.course-switch {
+  .flex(center, center, row nowrap);
+
+  &__online {
+    color: @color-yellow;
+  }
+  &__offline {
+    color: @color-red;
+  }
+}
+
+.course-switcher {
+  border-radius: 10px;
+  width: 40px;
+  height: 20px;
+  background-color: @color-purple;
+  padding: 1px 2px;
+  margin: 0 5px;
+  .flex();
+  position: relative;
+
+  transition: 300ms all;
+
+  &._offline {
+    background-color: @color-red;
+
+    .course-switcher__float {
+      left: calc(100% - 16px - 2px); //16px = width of float, 2px - paddingRight
+    }
+  }
+
+  &__float {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: @color-yellow;
+    border-radius: 50%;
+    transition: 300ms all;
+  }
+}

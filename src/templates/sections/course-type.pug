@@ -1,0 +1,19 @@
+section.course-type.box
+    .course-type__container.box__container
+        h2.course-type__title.title-common
+            span Формат
+            span курсов
+        form.course-switch
+            .course-switch__online.title-common Онлайн
+            label(for="isCourseFormOffline").course-switcher#course-switcher
+                .course-switcher__float
+            input(type="checkbox" id="isCourseFormOffline" name="isCourseFormOffline" hidden)
+            .course-switch__offline.title-common Офлайн
+        ul.course-type__benefits#course-type__benefits
+            li
+                span Обучение,
+                span Не выходя из дома
+            li
+                span Чат с преподавателем
+            li
+                span Живая трансляция
