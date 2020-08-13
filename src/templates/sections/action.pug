@@ -1,0 +1,36 @@
+section.action.box
+    .action__container.box__container
+        h2.action__title.title-common
+            span Запись
+            span на профессию
+        .action__text
+            h3
+                span Оставьте заявку
+                span и получите
+            ul
+                li Скидку до 50%
+                li Начало учебы сейчас
+                li Диплом государственного образца
+                li Налоговый вычет 13%
+        .action__price
+            | к оплате
+            .yellow 20160 <span>₽</span>
+        form.action-form
+            .action-form__input-field._name
+                input(type="text" name="clientName" id="clientName")
+            .action-form__input-field._number
+                .region-select
+                    .region-select__current RU
+                    .refion-select__current-code(disabled) +7
+                    .region-select__options
+                        .region-select__option UA
+                        .region-select__option BLR
+                    input(type="radio" name="phoneRegionChoose" value="RU" hidden)
+                    input(type="radio" name="phoneRegionChoose" value="RU" hidden)
+                    input(type="radio" name="phoneRegionChoose" value="RU" hidden)
+
+                input(type="text" name="clientPhone" id="clientPhone")
+
+            .action-from__action-button.btn-apply оставить заявку
+
+        .action__privacy Нажимая кнопку вы даёте свое согласие на обработку ваших персональных данных на условиях и для целей, определенных <a href="#">Политикой конфиденциальности</a>
