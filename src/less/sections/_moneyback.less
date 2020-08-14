@@ -1,0 +1,71 @@
+.moneyback {
+  color: @color-white;
+
+  background-color: @color-purple;
+  padding-top: 40px;
+  padding-bottom: 222px;
+  background-image: url("../img/mob/take-money@2x.png");
+  background-position: left bottom;
+  background-size: 283px 197px;
+  background-repeat: no-repeat;
+
+
+  &__title {
+    color: currentColor;
+
+    .padding_on_side();
+    .flex_column();
+    margin-bottom: 26px;
+  }
+
+  &__description {
+    .font(16px, 20px);
+    color: currentColor;
+
+    .padding_on_side();
+    margin-bottom: 32px;
+
+    b {
+      font-family: @font-montserrat-bold;
+    }
+  }
+}
+
+.moneyback-stats {
+  h4 {
+    color: @color-white;
+    font-family: @font-montserrat-light;
+
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-bottom: 17px;
+    opacity: 0.56;
+  }
+
+  &__item {
+    padding: 11px;
+    border-top: 1px solid rgba(@color-white, 0.2);
+    .flex(space-between, center, row nowrap);
+
+    p {
+      .flex_column();
+    }
+  }
+
+  &__price {
+    color: @color-yellow;
+    font-family: @font-montserrat-bold;
+    .font(20px, 20px);
+    display: inline-block;
+    position: relative;
+    padding-right: 10px;
+
+    span {
+      font-family: @font-montserrat-light;
+      .font(12px);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}

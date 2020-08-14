@@ -8,29 +8,31 @@ section.action.box
                 span Оставьте заявку
                 span и получите
             ul
-                li Скидку до 50%
-                li Начало учебы сейчас
-                li Диплом государственного образца
-                li Налоговый вычет 13%
+                li <span>Скидку до 50%</span>
+                li Начало учебы <span>сейчас</span>
+                li Диплом <span>государственного образца</span>
+                li Налоговый вычет <span>13%</span>
+
         .action__price
             | к оплате
-            .yellow 20160 <span>₽</span>
+            .yellow &nbsp;20160 <span>₽</span>
         form.action-form
-            .action-form__input-field._name
-                input(type="text" name="clientName" id="clientName")
-            .action-form__input-field._number
+            .action-form__field._name
+                input(type="text" placeholder="Ваше имя" name="clientName" id="clientName")
+            .action-form__field._number
                 .region-select
-                    .region-select__current RU
+                    .region-select__current
                     .refion-select__current-code(disabled) +7
                     .region-select__options
-                        .region-select__option UA
-                        .region-select__option BLR
+                        .region-select__option(data-code="+380") UA
+                        .region-select__option(data-code="+375") BLR
+                        .region-select__option(data-code="+7") RU
                     input(type="radio" name="phoneRegionChoose" value="RU" hidden)
                     input(type="radio" name="phoneRegionChoose" value="RU" hidden)
                     input(type="radio" name="phoneRegionChoose" value="RU" hidden)
 
                 input(type="text" name="clientPhone" id="clientPhone")
 
-            .action-from__action-button.btn-apply оставить заявку
+            .action-form__button.btn-apply оставить заявку
 
         .action__privacy Нажимая кнопку вы даёте свое согласие на обработку ваших персональных данных на условиях и для целей, определенных <a href="#">Политикой конфиденциальности</a>

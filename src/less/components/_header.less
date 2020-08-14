@@ -1,3 +1,55 @@
-.header {
+body {
+  padding-top: 76px; // as header is fixed
+}
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: @color-white;
+  width: 100%;
+  z-index: 555;
+
+  &__container {
+    padding-left: 24px;
+    padding-right: 24px;
+    .flex(space-between, flex-end);
+  }
+
+  .logo {
+    .flex(flex-start);
+
+    svg {
+      height: 34px;
+      width: 100%;
+      max-width: 78px;
+      flex-shrink: 0;
+      margin-right: 10px;
+    }
+
+    &__text {
+      .font(10px, 12px);
+      font-family: @font-montserrat-bold;
+      color: @color-black;
+      text-transform: uppercase;
+
+      .flex_column();
+    }
+  }
+}
+
+.mobile-menu-btn {
+  .flex(space-between, flex-start, column nowrap);
+  width: 32px;
+  height: 20px;
+  cursor: pointer;
+
+  span {
+    height: 4px;
+    width: 100%;
+    border-radius: 16px;
+    background-color: @color-purple;
+  }
 }
