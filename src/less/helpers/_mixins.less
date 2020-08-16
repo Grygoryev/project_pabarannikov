@@ -31,3 +31,38 @@
   display: flex;
   flex-direction: column;
 }
+
+//media-queries
+
+.min-mob-xs(@rules) {
+  @media(min-width: @mobile-extra-small) {
+    @rules();
+  }
+}
+
+.min-mob-s(@rules) {
+  @media(min-width: @mobile-small) {
+    @rules();
+  }
+}
+
+.min-mob(@rules) {
+ @media(min-width: @mobile) {
+   @rules();
+ }
+}
+
+.min-tablet(@rules) {
+  @media(min-width: @tablet) {
+    @rules();
+  }
+}
+
+.min-desktop(@rules) {
+  @media(min-width: @desktop) {
+    @rules();
+  }
+}
+
+
+

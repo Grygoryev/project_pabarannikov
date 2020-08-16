@@ -1,0 +1,36 @@
+.f-plato-message-box {
+  .font(12px, 16px);
+  box-shadow: 0 9px 22px rgba(59, 48, 109, 0.13), 0 2.71324px 6.63236px rgba(59, 48, 109, 0.0847066), 0px 1.12694px 2.75474px rgba(59, 48, 109, 0.065), 0px 0.407592px 0.996336px rgba(59, 48, 109, 0.0452935);
+  background-color: @color-white;
+  border-radius: 36px;
+}
+
+.f-plato-container {
+  box-shadow: 0 9px 22px rgba(59, 48, 109, 0.13), 0 2.71324px 6.63236px rgba(59, 48, 109, 0.0847066), 0px 1.12694px 2.75474px rgba(59, 48, 109, 0.065), 0px 0.407592px 0.996336px rgba(59, 48, 109, 0.0452935);
+  border-radius: 8px;
+  background-color: @color-white;
+  padding: 22px;
+}
+
+.f-plato-pagination {
+  width: 100%;
+  min-height: 20px;
+  padding: 20px;
+  .flex(center, center);
+
+  .swiper-pagination-bullet {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(@color-black, 0.2);
+    margin-right: 7px;
+
+    transition: 300ms all;
+
+    &-active {
+      background-color: @color-yellow;
+      width: 24px;
+      border-radius: 10px;
+    }
+  }
+}

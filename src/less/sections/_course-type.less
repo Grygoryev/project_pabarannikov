@@ -1,6 +1,6 @@
+//noinspection LessResolvedByNameOnly
 .course-type {
   padding-top: 38px;
-  padding-bottom: 35px;
 
   &__container {
     padding-left: 0;
@@ -16,16 +16,44 @@
   &__benefits {
     background-image: url("../img/mob/course-benefits_online.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 139% 116%;
+    background-position: -50px -10px;
     padding-top: 108px;
     padding-bottom: 40px;
+    margin-bottom: 20px;
+    //max-width: 375px;
+    //width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
     transition: 300ms all;
 
+    .min-mob-s({
+      background-size: 139% 115%;
+      padding-bottom: 75px;
+      padding-top: 135px;
+      //background-size: 100%;
+      //background-size: contain;
+      //background-position: left center;
+    });
+
+    .min-mob({
+
+    });
+
+
     &._offline {
       background-image: url("../img/mob/course-benefits_offline.png");
+      background-position: left top;
+      background-size: 100%;
+      //background-size: contain;
       padding-top: 50px;
-      padding-bottom: 130px;
+      padding-bottom: 60%;
+      margin-bottom: 0;
+
+      .min-mob-s({
+        padding-top: 72px;
+      })
     }
   }
 

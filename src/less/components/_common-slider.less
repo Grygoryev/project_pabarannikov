@@ -1,0 +1,29 @@
+.common-slider-container {
+  width: 100%;
+  height: 100%;
+  overflow: unset;
+  z-index: 1;
+}
+
+.common-slider {
+  .flex(space-between, center, row nowrap);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition-property: transform;
+}
+
+.swiper-slide {
+  flex-shrink: 0;
+
+  .min-tablet({
+    opacity: 0;
+    transition: 400ms opacity;
+  });
+
+  &.swiper-slide-active {
+    .min-tablet({
+      opacity: 1;
+    });
+  }
+}
