@@ -1,7 +1,7 @@
 .teachers {
   padding-top: 40px;
   padding-bottom: 56px;
-
+  background-color: #F0F4FD;
 
   &__title {
     .flex_column();
@@ -22,14 +22,14 @@
       })
     }
   }
+
+  .swiper-pagination-bullet-active {
+    background-color: @color-purple;
+  }
 }
 
 .teacher {
   position: relative;
-
-  &__container {
-    padding: 22px;
-  }
 
   &__header {
     padding-bottom: 140px;
@@ -100,6 +100,4 @@
       max-width: 30%;
     }
   }
-
-
 }

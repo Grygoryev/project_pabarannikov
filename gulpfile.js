@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp'),
+      babel = require('gulp-babel'),
       less = require('gulp-less'),
       pug = require('gulp-pug'),
       debug = require('gulp-debug'),
@@ -32,6 +33,7 @@ gulp.task('less', function () {
 gulp.task('js', function () {
   return gulp.src('src/js/**/*.js')
       .pipe(debug({title: 'working on'}))
+      .pipe(babel())
       .pipe(gulp.dest('build/js/'))
 });
 

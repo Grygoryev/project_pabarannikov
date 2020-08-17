@@ -1,4 +1,4 @@
-import Swiper from '../libs/swiper.min.js';
+// import Swiper from '../libs/swiper.min.js';
 // import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
 
 export const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
@@ -8,7 +8,6 @@ export const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
     el: '.swiper-feedback-pagination',
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',

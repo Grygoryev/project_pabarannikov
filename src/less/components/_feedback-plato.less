@@ -10,6 +10,11 @@
   border-radius: 8px;
   background-color: @color-white;
   padding: 22px;
+
+  .min-desktop({
+    max-width: 1154px;
+    padding: 136px 89px 108px 158px;
+  });
 }
 
 .f-plato-pagination {
@@ -28,9 +33,13 @@
     transition: 300ms all;
 
     &-active {
-      background-color: @color-yellow;
+      background-color: @color-white;
       width: 24px;
       border-radius: 10px;
+
+      .min-desktop({
+        width: 40px;
+      });
     }
   }
 }

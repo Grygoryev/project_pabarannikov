@@ -1,15 +1,28 @@
 .intro {
-  padding: 24px 0 16px;
 
   &__container {
     background-image: url("../img/mob/intro-bg@2x.png");
     background-position: right bottom;
     background-repeat: no-repeat;
     background-size: 240px;
+    padding-top: 24px;
+    padding-bottom: 16px;
+
+    .min-desktop({
+      background-image: url("../img/desktop/introbg@2x.png");
+      background-size: 50%;
+      padding-top: 50px;
+      padding-bottom: 80px;
+    });
   }
 
   &__main {
     width: 70%;
+    .flex(space-between, center);
+
+    .min-desktop({
+      width: 58%;
+    });
   }
 
   &__sup-title {
@@ -19,11 +32,19 @@
     font-family: @font-montserrat-bold;
 
     margin-bottom: 4px;
+
+    .min-desktop({
+      margin-bottom: 44px;
+    });
   }
 
   &__title {
     .flex(flex-start, flex-start, column nowrap);
     margin-bottom: 13px;
+
+    .min-desktop({
+      margin-bottom: 50px;
+    });
   }
 
   &__sub-title {
@@ -32,11 +53,22 @@
 
     .flex(flex-start, flex-start, column nowrap);
     margin-bottom: 38px;
+
+    .min-desktop({
+      .font(28px, 32px);
+      margin-bottom: 136px;
+      .flex_column();
+    });
   }
 
   &__apply-btn {
     color: @color-white;
-    background-color: #FF3D4B;
+    background-color: @color-red;
+
+    .min-desktop({
+      padding: 20px 40px;
+      display: inline-block;
+    });
   }
 }
 
@@ -46,10 +78,13 @@
 
   &__prev {
     color: rgba(@color-red, 0.4);
-    font-weight: bold;
+    font-family: @font-montserrat-bold;
 
     position: relative;
     display: inline-block;
+    order: 3;
+
+    .font(24px, 21px);
 
     &::after {
       content: '';
@@ -58,7 +93,7 @@
       left: 0;
       width: 80%;
       height: 1px;
-      background-color: #FF3D4B;
+      background-color: @color-red;
       transform: rotate(-166.22deg) translateY(-50%);
     }
 
@@ -67,6 +102,11 @@
       position: absolute;
       right: -10px;
       bottom: 0;
+
+      .min-desktop({
+        right: -15px;
+        bottom: 5px;
+      });
     }
   }
 
@@ -79,16 +119,35 @@
     position: relative;
     display: inline-block;
 
+    .min-desktop({
+      .font(72px, 88px);
+      order: 1;
+    });
+
     span {
       transform: scale(0.44);
       position: absolute;
       right: -25px;
       top: -10px;
+
+      .min-desktop({
+        .font(18px, 21px);
+        font-family: @font-montserrat;
+        transform: none;
+        top: 15px;
+        right: -20px;
+      });
     }
   }
 
   &__discount {
-    display: flex;
-    flex-direction: column;
+    .flex_column();
+
+    .min-desktop({
+      flex-direction: row;
+      order: 2;
+      margin-bottom: 10px;
+      .font(16px, 1);
+    });
   }
 }

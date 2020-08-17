@@ -6,8 +6,13 @@
   color: @color-black;
   text-align: center;
 
+  cursor: pointer;
   padding: 12px 32px;
   border-radius: 8px;
+
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 .title-common {
@@ -15,4 +20,8 @@
   font-family: @font-montserrat-bold;
   font-weight: bold;
   color: @color-black;
+
+  .min-desktop({
+    .font(56px, 56px);
+  })
 }

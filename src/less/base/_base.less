@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   background-color: @color-main-background;
   width: 100%;
@@ -35,7 +35,17 @@ body {
   &__container {
     padding: 0 13px;
     width: 100%;
-    max-width: 440px;
+    max-width: @mobile;
     margin: 0 auto;
+
+    .min-tablet({
+      padding: 0 20px;
+      max-width: @tablet;
+    });
+
+    .min-desktop({
+      max-width: @desktop;
+      padding: 0 5px;
+    })
   }
 }
