@@ -2,14 +2,21 @@
 
   &__container {
     background-image: url("../img/mob/intro-bg@2x.png");
-    background-position: right bottom;
+    background-position: 115% 76%;
     background-repeat: no-repeat;
     background-size: 240px;
     padding-top: 24px;
     padding-bottom: 16px;
 
+    .min-tablet({
+      background-position: right bottom;
+      padding-top: 40px;
+      padding-bottom: 60px;
+    });
+
     .min-desktop({
       background-image: url("../img/desktop/introbg@2x.png");
+      background-position: right bottom;
       background-size: 50%;
       padding-top: 50px;
       padding-bottom: 80px;
@@ -19,6 +26,10 @@
   &__main {
     width: 70%;
     .flex(space-between, center);
+
+    //.min-tablet({
+    //  align-items: flex-end;
+    //});
 
     .min-desktop({
       width: 58%;
@@ -65,9 +76,13 @@
     color: @color-white;
     background-color: @color-red;
 
+    .min-tablet({
+      padding: 15px 30px;
+      display: inline-block;
+    });
+
     .min-desktop({
       padding: 20px 40px;
-      display: inline-block;
     });
   }
 }

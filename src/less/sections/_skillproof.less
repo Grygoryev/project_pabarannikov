@@ -5,6 +5,10 @@
     padding-bottom: 24px;
     position: relative;
 
+    .min-tablet({
+      padding-bottom: 60px;
+    });
+
     .min-desktop({
       padding-top: 80px;
       padding-bottom: 80px;
@@ -23,6 +27,7 @@
   }
 
   &__section {
+    text-align: center;
 
     .min-desktop({
       width: 50%;
@@ -48,6 +53,9 @@
 
   img {
     width: 100%;
+    max-width: @mobile;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 15px;
   }
 
@@ -67,7 +75,7 @@
   }
 
   &__more-btn {
-    .font(20px, 28px);
+    .font(18px, 24px);
     text-align: center;
 
     border: 1px solid @color-yellow;
@@ -80,8 +88,13 @@
       background-color: rgba(@color-yellow, 0.1);
     }
 
-    .min-desktop({
+    .min-mob-s({
+      .font(20px, 28px);
+    });
+
+    .min-mob({
       width: fit-content;
+      display: inline-block;
     });
   }
 }

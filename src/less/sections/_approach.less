@@ -27,6 +27,9 @@
 
   &__facts {
     .flex(space-between, center, column nowrap);
+    max-width: @mobile;
+    margin-left: auto;
+    margin-right: auto;
 
     .min-desktop({
       width: 50%;
@@ -146,6 +149,7 @@
   padding-bottom: 16px;
   max-width: @mobile;
   margin: 0 auto;
+  .flex();
 
   .min-desktop({
     max-width: none;
@@ -169,7 +173,7 @@
   }
 
   &__item {
-    width: 100%;
+    width: 49%;
     height: 127px;
     margin-bottom: 2%;
     overflow: hidden;
@@ -180,10 +184,13 @@
 
     .min-desktop({
       height: 253px;
+      width: 100%;
       margin-bottom: 0;
     });
 
     &._big {
+      width: 100%;
+
       .min-desktop({
         grid-column: span 3;
         grid-row: span 2;

@@ -9,11 +9,23 @@ section.course-type.box
                 .course-switcher__float
             input(type="checkbox" id="isCourseFormOffline" name="isCourseFormOffline" hidden)
             .course-switch__offline.title-common Офлайн
-        ul.course-type__benefits#course-type__benefits
-            li
-                span Обучение,
-                span Не выходя из дома
-            li
-                span Чат с преподавателем
-            li
-                span Живая трансляция
+        .course-type__benefits#course-type__benefits
+            ul._online
+                li.title Онлайн
+                li
+                    span Обучение,
+                    span Не выходя из дома
+                li
+                    span Чат с преподавателем
+                li
+                    span Живая трансляция
+            ul._offline
+                li.title Оффлайн
+                li
+                    span Комфортное пространство
+                    span для обучения
+                li
+                    span Живое общение
+                li
+                    span Повышенная
+                    span мотивация учиться
