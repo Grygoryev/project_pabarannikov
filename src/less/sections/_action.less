@@ -1,13 +1,27 @@
 .action {
   background-color: @color-purple;
-  padding-top: 40px;
-  padding-bottom: 24px;
+
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 24px;
+
+    .min-desktop({
+      .flex(space-between, flex-end, row wrap);
+      padding-top: 80px;
+      padding-bottom: 110px;
+    });
+  }
 
   &__title {
     color: @color-white;
 
     .flex_column();
     margin-bottom: 21px;
+
+    .min-desktop({
+      width: 100%;
+      margin-bottom: 33px;
+    })
   }
 
   h3 {
@@ -17,6 +31,12 @@
 
     .flex_column();
     margin-bottom: 16px;
+  }
+
+  &__text {
+    .min-desktop({
+      align-self: flex-start;
+    })
   }
 
   ul {
@@ -54,10 +74,18 @@
 
     margin-bottom: 20px;
 
+    .min-desktop({
+      .flex_column();
+    });
+
     .yellow {
       color: @color-yellow;
       display: inline-block;
       position: relative;
+
+      .min-desktop({
+        .font(56px);
+      });
 
       span {
         font-family: @font-montserrat-light;
@@ -65,24 +93,35 @@
         position: absolute;
         bottom: 3px;
         right: -10px;
+
+        .min-desktop({
+          .font(16px, 28px);
+          bottom: 5px;
+          right: -12px;
+        });
       }
-    }
-  }
-
-  &__privacy {
-    .font(12px, 16px);
-    color: @color-white;
-    text-align: center;
-
-    a {
-      text-decoration: underline;
-      color: @color-yellow;
     }
   }
 }
 
 .action-form {
   margin-bottom: 20px;
+
+  .min-desktop({
+    .flex_column();
+    max-width: 395px;
+    width: 100%;
+    margin-bottom: 0;
+    position: relative;
+    top: -30px;
+  });
+
+  &__fields {
+    .min-desktop({
+      order: 1;
+      margin-bottom: 42px;
+    });
+  }
 
   &__field {
     position: relative;
@@ -91,6 +130,12 @@
     background-color: @color-white;
     border-radius: 4px;
     border: none;
+
+    .min-desktop({
+      &:last-child {
+        margin-bottom: 0;
+      }
+    });
 
     input {
       color: rgba(@color-black, 0.7);
@@ -108,12 +153,35 @@
     }
 
     &._number {
-      .flex();
+      .flex(flex-start, center, row nowrap);
     }
   }
 
   &__button {
     background-color: @color-yellow;
+
+    .min-desktop({
+      order: 3;
+      width: fit-content;
+    });
+  }
+
+  &__privacy {
+    .font(12px, 16px);
+    color: @color-white;
+    text-align: center;
+
+    a {
+      text-decoration: underline;
+      color: @color-yellow;
+    }
+
+    .min-desktop({
+      order: 2;
+      margin-bottom: 21px;
+      max-width: 285px;
+      text-align: left;
+    });
   }
 }
 
@@ -123,6 +191,7 @@
   &__current-country {
     position: relative;
     margin-right: 5px;
+    cursor: pointer;
 
     &::after {
       content: '';
@@ -169,6 +238,11 @@
 
   &__option {
     padding: 8px 0 2px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(@color-white, 0.7);
+    }
 
     svg {
       max-width: 40px;
@@ -178,7 +252,6 @@
 }
 
 .region-select._opened {
-
 
   .region-select__options {
     visibility: visible;

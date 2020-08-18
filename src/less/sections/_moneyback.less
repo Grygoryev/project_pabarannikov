@@ -1,13 +1,12 @@
 .moneyback {
-  color: @color-white;
+  color: @color-black;
+  background-color: @color-white;
 
-  background-color: @color-purple;
-  padding-top: 40px;
-  padding-bottom: 222px;
-  background-image: url("../img/mob/take-money@2x.png");
-  background-position: left bottom;
-  background-size: 283px 197px;
-  background-repeat: no-repeat;
+  &__container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    position: relative;
+  }
 
   &__title {
     color: currentColor;
@@ -15,6 +14,7 @@
     .padding_on_side();
     .flex_column();
     margin-bottom: 26px;
+    width: 60%;
   }
 
   &__description {
@@ -24,6 +24,17 @@
     .padding_on_side();
     margin-bottom: 32px;
 
+    &::after {
+      content: '';
+      position: absolute;
+      top: 40px;
+      right: 28px;
+      width: 104px;
+      height: 112px;
+      background: url('../img/icons/icon-dollar-bag.svg') no-repeat;
+      background-size: contain;
+    }
+
     b {
       font-family: @font-montserrat-bold;
     }
@@ -32,7 +43,7 @@
 
 .moneyback-stats {
   h4 {
-    color: @color-white;
+    color: rgba(@color-black, 0.56);
     font-family: @font-montserrat-light;
 
     padding-left: 11px;
@@ -43,7 +54,7 @@
 
   &__item {
     padding: 11px;
-    border-top: 1px solid rgba(@color-white, 0.2);
+    border-top: 1px solid rgba(@color-black, 0.2);
     .flex(space-between, center, row nowrap);
 
     p {
@@ -52,7 +63,7 @@
   }
 
   &__price {
-    color: @color-yellow;
+    color: @color-red;
     font-family: @font-montserrat-bold;
     .font(20px, 20px);
     display: inline-block;

@@ -38,11 +38,14 @@ body {
 
     &__text {
       .font(10px, 12px);
-      font-family: @font-montserrat-bold;
       color: @color-black;
       text-transform: uppercase;
 
       .flex_column();
+
+      .bold {
+        font-family: @font-montserrat-bold;
+      }
     }
   }
 }

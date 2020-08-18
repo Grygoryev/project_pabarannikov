@@ -3,6 +3,10 @@
   box-shadow: 0 9px 22px rgba(59, 48, 109, 0.13), 0 2.71324px 6.63236px rgba(59, 48, 109, 0.0847066), 0px 1.12694px 2.75474px rgba(59, 48, 109, 0.065), 0px 0.407592px 0.996336px rgba(59, 48, 109, 0.0452935);
   background-color: @color-white;
   border-radius: 36px;
+
+  .min-desktop({
+    .font(16px, 20px);
+  });
 }
 
 .f-plato-container {
@@ -15,6 +19,34 @@
     max-width: 1154px;
     padding: 136px 89px 108px 158px;
   });
+}
+
+.f-plato-author-title {
+  p {
+    .font(16px);
+    font-family: @font-montserrat-bold;
+
+    .min-mob-s() {
+      .font(20px);
+    }
+
+    .min-desktop({
+      .font(36px, 40px);
+    });
+  }
+}
+
+.f-plato-section-title {
+  .font(16px, 20px);
+  font-family: @font-montserrat-bold;
+
+  .min-desktop({
+    .font(28px, 32px);
+  });
+}
+
+.f-plato-section-text {
+  .font(16px, 20px);
 }
 
 .f-plato-pagination {

@@ -14,7 +14,9 @@
   });
 
   .swiper-feedback-button-next,
-  .swiper-feedback-button-prev {
+  .swiper-feedback-button-prev,
+  .swiper-teacher-button-next,
+  .swiper-teacher-button-prev {
     width: 50px;
     height: 100%;
     position: absolute;
@@ -23,11 +25,16 @@
     outline: none;
     cursor: pointer;
     z-index: 50;
+    display: none;
+
+    .min-desktop({
+      display: block;
+    });
 
     &::before {
       content: '';
-      width: 25px;
-      height: 25px;
+      width: 15px;
+      height: 15px;
       border-bottom: 3px solid @color-white;
       border-left: 3px solid @color-white;
       border-radius: 2px;
@@ -39,7 +46,8 @@
     }
   }
 
-  .swiper-feedback-button-prev {
+  .swiper-feedback-button-prev,
+  .swiper-teacher-button-prev {
     width: 50px;
     right: 0;
     left: auto;

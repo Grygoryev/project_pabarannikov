@@ -4,7 +4,7 @@ section.approach.box
         .approach__facts
             .approach-fact._purple
                 .approach-fact__number
-                    span 11 лет
+                    span.num 11 лет
                     span на рынке
                 .approach-fact__description
                     span вы обучаетесь по
@@ -12,7 +12,7 @@ section.approach.box
 
             .approach-fact._red
                 .approach-fact__number
-                    span 234
+                    span.num 234
                     span курса
                 .approach-fact__description
                     span расширьте свои знания
@@ -20,7 +20,7 @@ section.approach.box
 
             .approach-fact._magenta
                 .approach-fact__number
-                    span 58 школ
+                    span.num 58 школ
                     span в 5 странах
                 .approach-fact__description
                     span вы можете посмотреть
@@ -28,25 +28,34 @@ section.approach.box
 
             .approach-fact._white
                 .approach-fact__number
-                    span 100 089
+                    span.num 100 089
                     span учеников
                 .approach-fact__description
                     span вы уверены, что наши
                     span курсы эффективны
 
-        //.approach-fact__video
-        //    iframe(src='https://www.youtube.com/embed/gbvY-cjKHKw' frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen='')
-        //
+        .approach__video
 
-    .approach-fact__container.box__container
+    .approach__container.box__container
         .gallery
             .gallery__item._big
-                img(src="img/mob/gallery/big.jpg" alt="pic")
+                picture
+                    source(srcset="img/desktop/gallery/big.jpg" media="(min-width: 1280px)")
+                    img(src="img/mob/gallery/big.jpg" alt="pic")
+
             .gallery__item
-                img(src="img/mob/gallery/1.jpg" alt="pic")
+                picture
+                    source(srcset="img/desktop/gallery/1.jpg" media="(min-width: 1280px)")
+                    img(src="img/mob/gallery/1.jpg" alt="pic")
             .gallery__item
-                img(src="img/mob/gallery/2.jpg" alt="pic")
+                picture
+                    source(srcset="img/desktop/gallery/2.jpg" media="(min-width: 1280px)")
+                    img(src="img/mob/gallery/2.jpg" alt="pic")
             .gallery__item
-                img(src="img/mob/gallery/3.jpg" alt="pic")
+                picture
+                    source(srcset="img/desktop/gallery/3.jpg" media="(min-width: 1280px)")
+                    img(src="img/mob/gallery/3.jpg" alt="pic")
             .gallery__item
-                img(src="img/mob/gallery/4.jpg" alt="pic")
+                picture
+                    source(srcset="img/desktop/gallery/4.jpg" media="(min-width: 1280px)")
+                    img(src="img/mob/gallery/4.jpg" alt="pic")

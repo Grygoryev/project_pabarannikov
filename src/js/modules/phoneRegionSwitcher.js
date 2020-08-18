@@ -1,14 +1,12 @@
 export const phoneRegionSwitcher = () => {
   const switcher = document.getElementById('region-select'),
         options = [...document.getElementsByClassName('region-select__option')],
-        currentFlag = document.querySelector('.region-select__current-country')
-        // flagPic = document.getElementById('region-select__option')
+        currentFlag = document.querySelector('.region-select__current-country'),
+        currentCode = document.getElementById('region-select-code')
 
   switcher.addEventListener('click', () => {
     switcher.classList.toggle('_opened')
   })
-
-  console.log(options)
 
   options.forEach(option => {
     option.addEventListener('click', () => {
@@ -17,6 +15,7 @@ export const phoneRegionSwitcher = () => {
             <use href=${option.dataset.iconId}></use>
         </svg>
       `
+      currentCode.innerHtml = option.dataset.code
       switcher.classList.toggle('_opened')
     })
   })

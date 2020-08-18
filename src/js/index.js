@@ -23,8 +23,8 @@ const feedbackSwiper2 = new Swiper('.swiper-teachers-container', {
     el: '.swiper-teachers-pagination',
   },
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-teacher-button-next',
+    prevEl: '.swiper-teacher-button-prev',
   },
 })
 
@@ -49,7 +49,8 @@ const courseSwitcher = () => {
 const phoneRegionSwitcher = () => {
   const switcher = document.getElementById('region-select'),
     options = [...document.getElementsByClassName('region-select__option')],
-    currentFlag = document.querySelector('.region-select__current-country')
+    currentFlag = document.querySelector('.region-select__current-country'),
+    currentCode = document.getElementById('region-select-code')
 
   switcher.addEventListener('click', () => {
     switcher.classList.toggle('_opened')
@@ -58,10 +59,11 @@ const phoneRegionSwitcher = () => {
   options.forEach(option => {
     option.addEventListener('click', () => {
       currentFlag.innerHTML = `
-        <svg>
-            <use href="${option.dataset.iconId}" xlink:href="${option.dataset.iconId}"></use>
+        <svg> 
+            <use href=${option.dataset.iconId}></use>
         </svg>
       `
+      currentCode.innerHTML = option.dataset.code
       switcher.classList.toggle('_opened')
     })
   })

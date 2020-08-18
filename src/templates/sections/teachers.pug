@@ -4,69 +4,29 @@ section.teachers.box
             span Наши
             span Преподаватели
         .swiper-teachers-container.swiper-container.common-slider-container
+            .swiper-teacher-button-next
+            .swiper-teacher-button-prev
             .swiper-wrapper.common-slider.teachers__slider
 
                 .teacher.swiper-slide
-                    .teacher__header
+                    .teacher__person
                         .teacher__message-box.f-plato-message-box
                             p SMM — это возможность помогать людям в их бизнесе. Возможность заниматься любимым делом и постоянно совершенствоваться. Возможность кайфовать от результатов.
-                        img(src="img/mob/feedback-teacher@2x.png" alt="teacher-img").teacher__photo
+                        picture
+                            source(srcset="img/desktop/feedback-teacher@2x.png" media="(min-width: 1280px)")
+                            img(src="img/mob/feedback-teacher@2x.png" alt="teacher-img").teacher__photo
 
                     .teacher__container.f-plato-container
                         .teacher__fio-data
-                            .teacher__fio
+                            .teacher__fio.f-plato-author-title
                                 p Константин
                                 p Константинопольский
                             .teacher__label
-                                span Таргетолог,
+                                span Таргетолог,&nbsp;
                                 span SMM-cпециалист
                         .teacher__section
-                            h3 Опыт
-                            p.teacher__text Ведет социальные сети для крупнейших брендов. Увеличила количество подписчиков одного бренда с 3 000 до 50 000. Постоянно придумывает и публикует очень крутой контент.
-                        .teacher__footer
-                            img(alt="teacher-project" src="img/mob/teacher-projects/1.png")
-                            img(alt="teacher-project" src="img/mob/teacher-projects/2.png")
-                            img(alt="teacher-project" src="img/mob/teacher-projects/3.png")
-
-                .teacher.swiper-slide
-                    .teacher__header
-                        .teacher__message-box.f-plato-message-box
-                            p SMM — это возможность помогать людям в их бизнесе. Возможность заниматься любимым делом и постоянно совершенствоваться. Возможность кайфовать от результатов.
-                        img(src="img/mob/feedback-teacher@2x.png" alt="teacher-img").teacher__photo
-
-                    .teacher__container.f-plato-container
-                        .teacher__fio-data
-                            .teacher__fio
-                                p Константин
-                                p Константинопольский
-                            .teacher__label
-                                span Таргетолог,
-                                span SMM-cпециалист
-                        .teacher__section
-                            h3 Опыт
-                            p.teacher__text Ведет социальные сети для крупнейших брендов. Увеличила количество подписчиков одного бренда с 3 000 до 50 000. Постоянно придумывает и публикует очень крутой контент.
-                        .teacher__footer
-                            img(alt="teacher-project" src="img/mob/teacher-projects/1.png")
-                            img(alt="teacher-project" src="img/mob/teacher-projects/2.png")
-                            img(alt="teacher-project" src="img/mob/teacher-projects/3.png")
-
-                .teacher.swiper-slide
-                    .teacher__header
-                        .teacher__message-box.f-plato-message-box
-                            p SMM — это возможность помогать людям в их бизнесе. Возможность заниматься любимым делом и постоянно совершенствоваться. Возможность кайфовать от результатов.
-                        img(src="img/mob/feedback-teacher@2x.png" alt="teacher-img").teacher__photo
-
-                    .teacher__container.f-plato-container
-                        .teacher__fio-data
-                            .teacher__fio
-                                p Константин
-                                p Константинопольский
-                            .teacher__label
-                                span Таргетолог,
-                                span SMM-cпециалист
-                        .teacher__section
-                            h3 Опыт
-                            p.teacher__text Ведет социальные сети для крупнейших брендов. Увеличила количество подписчиков одного бренда с 3 000 до 50 000. Постоянно придумывает и публикует очень крутой контент.
+                            h3.f-plato-section-title Опыт
+                            p.teacher__text.f-plato-section-text Ведет социальные сети для крупнейших брендов. Увеличила количество подписчиков одного бренда с 3 000 до 50 000. Постоянно придумывает и публикует очень крутой контент.
                         .teacher__footer
                             img(alt="teacher-project" src="img/mob/teacher-projects/1.png")
                             img(alt="teacher-project" src="img/mob/teacher-projects/2.png")

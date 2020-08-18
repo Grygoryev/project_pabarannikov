@@ -3,8 +3,10 @@ section.skillproof.box
         h2.title-common.skillproof__title
             span Подтверждение
             span ваших знаний
-        .skillproof__section
-            img(src="img/mob/celebration@2x.png" alt="")
-        .skillproof__section
+        .skillproof__section._pic
+            picture
+                source(srcset="img/desktop/skillproof@2x.png" media="(min-width: 1280px)")
+                img(src="img/mob/skillproof@2x.png" alt="")
+        .skillproof__section._info
             p После окончания курса вы получаете Персональный сертификат и Диплом государственного образца
             .skillproof__more-btn Подробне о документах
