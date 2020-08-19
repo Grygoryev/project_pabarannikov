@@ -4,13 +4,23 @@
 // import { mobMenu } from "./modules/mobMenu.js"
 // import { phoneRegionSwitcher } from "./modules/phoneRegionSwitcher.js";
 
+const programStageController = () => {
+  const programStages = [...document.getElementsByClassName('program-stage')];
+
+  programStages.forEach(stage => {
+    stage.addEventListener('click', () => {
+      stage.classList.toggle('_opened')
+    })
+  })
+}
+
 const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
   spaceBetween: 20,
   updateOnImagesReady: true,
   pagination: {
     el: '.swiper-feedback-pagination',
   },
-
+  loop: true,
   navigation: {
     nextEl: '.swiper-feedback-button-next',
     prevEl: '.swiper-feedback-button-prev',
@@ -22,6 +32,7 @@ const feedbackSwiper2 = new Swiper('.swiper-teachers-container', {
   pagination: {
     el: '.swiper-teachers-pagination',
   },
+  loop: true,
   navigation: {
     nextEl: '.swiper-teacher-button-next',
     prevEl: '.swiper-teacher-button-prev',
@@ -79,7 +90,8 @@ const mobMenu = () => {
 function init() {
   courseSwitcher();
   mobMenu();
-  phoneRegionSwitcher()
+  phoneRegionSwitcher();
+  programStageController();
 }
 
 init()

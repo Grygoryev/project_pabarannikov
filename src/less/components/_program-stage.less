@@ -5,8 +5,16 @@
   margin-bottom: 8px;
   border-radius: 8px;
   width: 100%;
+  cursor: pointer;
 
   @side-padding: 30px;
+
+  &:hover {
+
+    .arrow-btn {
+      transform: rotate(90deg);
+    }
+  }
 
   .min-desktop({
     max-width: 837px;
@@ -93,6 +101,7 @@
       max-height: 56px;
       width: 100%;
       height: 100%;
+      transition: 300ms transform;
 
       .min-desktop({
         order: 1;
@@ -116,10 +125,18 @@
   &__main {
     position: relative;
     width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+
+    transition: all 300ms linear;
 
     .min-desktop({
-      position: static;
-      .flex(space-between, flex-start);
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-flow: row wrap;
+      display: flex;
       margin-left: auto;
       margin-right: auto;
       max-width: 700px;
@@ -174,10 +191,13 @@
     font-family: @font-montserrat-bold;
     font-weight: bold;
     .flex(flex-start, center, row nowrap);
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
 
     span {
       .font(52px);
-      color: @color-red;
+      color: currentColor;
       margin-right: 10px;
     }
 
@@ -292,12 +312,34 @@
 
   .program-stage {
 
-    &__header {
-      margin-bottom: 25px;
+    &__lessons-quantity {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
     }
 
+    &__main {
+      //position: static;
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+      overflow: auto;
+      padding-top: 25px;
+
+      .min-desktop({
+        //position: static;
+        //display: flex;
+      });
+    }
+
+
     &__learn-more {
+      //position: absolute;
+      height: 0;
+      width: 0;
       display: none;
+      opacity: 0;
+      visibility: hidden;
     }
 
     &__icon {
