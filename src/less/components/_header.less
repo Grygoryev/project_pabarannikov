@@ -105,6 +105,7 @@ body {
   }
 
   &__link {
+    color: @color-black;
     text-transform: uppercase;
     margin-bottom: 20px;
 
@@ -141,6 +142,11 @@ body {
     color: @color-white;
     max-width: 80%;
     margin: 0 auto;
+    display: block;
+
+    &:hover {
+      color: @color-white;
+    }
 
     .min-tablet({
       max-width: @mobile;

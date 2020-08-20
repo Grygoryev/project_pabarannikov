@@ -87,11 +87,33 @@ const mobMenu = () => {
   menuBtn.addEventListener('click', () => header.classList.toggle('_opened'));
 }
 
+const navController = () => {
+  const links = [...document.getElementsByClassName('nav__link')],
+        header = document.getElementById('header')
+
+  links.forEach(l => {
+    l.addEventListener('click', e => {
+      e.preventDefault();
+
+      if (window.innerWidth < 1280 && header.classList.contains('_opened')) {
+        header.classList.remove('_opened')
+      }
+
+      window.scrollTo({
+        top: document.getElementById(l.dataset.linkTo).offsetTop - header.offsetHeight,
+        left: 0,
+        behavior: 'smooth'
+      })
+    })
+  })
+}
+
 function init() {
   courseSwitcher();
   mobMenu();
   phoneRegionSwitcher();
   programStageController();
+  navController();
 }
 
 init()
