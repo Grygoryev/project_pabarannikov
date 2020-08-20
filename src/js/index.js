@@ -87,8 +87,32 @@ const mobMenu = () => {
   menuBtn.addEventListener('click', () => header.classList.toggle('_opened'));
 }
 
+const proofDocs = () => {
+  const docs = document.getElementById('proof-docs'),
+        openBtn = document.getElementById('skillproof-show-docs-btn'),
+        closeBtn = document.getElementById('skillproof-hide-docs-btn'),
+        docsContainer = document.querySelector('.proof-docs__container')
+
+  document.addEventListener('click', (e) => {
+
+    let target = e.target
+
+    if (docs.classList.contains('_open') && target !== docsContainer && !docsContainer.contains(target)) {
+      docs.classList.remove('_open')
+    }
+
+    if (target === openBtn) {
+      docs.classList.add('_open')
+    }
+
+    if (target === closeBtn) {
+      docs.classList.remove('_open')
+    }
+  })
+}
+
 const navController = () => {
-  const links = [...document.getElementsByClassName('nav__link')],
+  const links = [...document.getElementsByClassName('nav-link')],
         header = document.getElementById('header')
 
   links.forEach(l => {
@@ -114,6 +138,7 @@ function init() {
   phoneRegionSwitcher();
   programStageController();
   navController();
+  proofDocs();
 }
 
 init()
