@@ -1,11 +1,15 @@
 'use strict';
 
 const gulp = require('gulp'),
-      babel = require('gulp-babel'),
+      // babel = require('gulp-babel'),
       less = require('gulp-less'),
+      webpack = require('webpack'),
+      cssmin = require('gulp-cssmin'),
       pug = require('gulp-pug'),
+      minify = require('gulp-minify'),
       debug = require('gulp-debug'),
       del = require('del'),
+      webp = require('gulp-webp'),
       svgmin = require('gulp-svgmin'),
       imgmin = require('gulp-image'),
       autoprefixer = require('gulp-autoprefixer'),
@@ -26,15 +30,19 @@ gulp.task('less', function () {
       .pipe(autoprefixer({
         browsers: ['last 2 versions']
       }))
+      .pipe(cssmin())
       .pipe(debug({title: 'working on'}))
       .pipe(gulp.dest('build/css'))
 });
 
-gulp.task('js', function () {
-  return gulp.src('src/js/**/*.js')
-      .pipe(debug({title: 'working on'}))
-      .pipe(babel())
-      .pipe(gulp.dest('build/js/'))
+gulp.task('js', function(callback) {
+  webpack(require('./webpack.config.js'), function(err, stats) {
+    if (err) {
+      console.log(err.toString());
+    }
+    console.log(stats.toString());
+    callback();
+  });
 });
 
 gulp.task('img', function () {
@@ -54,6 +62,13 @@ gulp.task('img', function () {
       .pipe(gulp.dest('build/img'))
 });
 
+gulp.task('webp', function() {
+  return gulp.src('src/img/**/*.{png,jpg}')
+    .pipe(debug({title: 'qweqweqwe'}))
+    .pipe(webp())
+    .pipe(gulp.dest('build/img'))
+});
+
 gulp.task('svgimg', function () {
   return gulp.src('src/img/**/*.svg', {since: gulp.lastRun('svgimg')})
       .pipe(debug({title: 'working on'}))
@@ -71,16 +86,15 @@ gulp.task('fonts', function () {
       .pipe(gulp.dest('build/fonts'))
 });
 
-gulp.task('browser-sync', function () {
+
+gulp.task('watch', function () {
   browserSync.init({
     server: {
       baseDir: 'build'
     },
     notify: true
   })
-});
 
-gulp.task('watch', function () {
   gulp.watch('src/less/**/*.*', gulp.series('less'));
   gulp.watch('src/templates/**/*.*', gulp.series('pug'));
   gulp.watch('src/js/**/*.*', gulp.series('js'));
@@ -95,6 +109,4 @@ gulp.task('clean', function () {
 gulp.task('build', gulp.series('clean', gulp.parallel('pug', 'less', 'js', 'img', 'fonts')));
 // 'assets', 'fonts'
 
-gulp.task('serve', gulp.parallel('watch', 'browser-sync'));
-
-gulp.task('dev', gulp.series('build', 'serve'));
+gulp.task('dev', gulp.series('build', 'watch'));

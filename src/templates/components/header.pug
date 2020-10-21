@@ -1,16 +1,18 @@
 header.header.box#header
     .header__container.box__container
-        .logo
+        a(href="/")#logo.logo
             svg
                 use(href="#icon-logo" xlink:href="#icon-logo")
             p.logo__text
                 span международная
                 span.bold школа
                 span.bold профессий
+        a(href="").header__apply-btn#header-sticky-btn Оставить заявку
         .mobile-menu-btn#mobile-menu-btn
-            span
-            span
-            span
+            .mobile-menu-btn__container
+                span
+                span
+                span
 
         nav.nav
             .nav__links
@@ -19,8 +21,9 @@ header.header.box#header
                 a(href="#skillproof" data-link-to="skillproof").nav-link Результаты
                 a(href="#teachers" data-link-to="teachers").nav-link Преподаватели
                 a(href="#approach" data-link-to="approach").nav-link Подход
-            .nav__phone 8 800 500-82-74
 
-            a(href="#action" data-link-to="action").nav-link.nav__apply-btn.btn-apply Записаться
+            a(href="tel:88005008274").nav__phone 8 800 500-82-74
+
+            //- a(href="#action" data-link-to="action").nav-link.nav__apply-btn.btn-apply Записаться
 
 

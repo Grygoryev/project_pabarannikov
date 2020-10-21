@@ -5,8 +5,10 @@ section.skillproof.box#skillproof
             span ваших знаний
         .skillproof__section._pic
             picture
+                source(srcset="img/desktop/skillproof@2x.webp" type="image/webp" media="(min-width: 1280px)")
                 source(srcset="img/desktop/skillproof@2x.png" media="(min-width: 1280px)")
-                img(src="img/mob/skillproof@2x.png" alt="")
+                source(srcset="img/mob/skillproof@2x.webp" type="image/webp")
+                img(loading="lazy" src="img/mob/skillproof@2x.png" alt="")
         .skillproof__section._info
             p После окончания курса вы получаете Персональный сертификат и Диплом государственного образца
             #skillproof-show-docs-btn.skillproof__more-btn Подробнее о документах
@@ -18,8 +20,12 @@ section.skillproof.box#skillproof
                 .proof-docs__section
                     h4 Персональный сертификат
                     p По итогам обучения на <span> курсе / полном курсе </span> вы получаете персональный сертификат. Слушатели онлайн-курсов могут получить документы в учебном центре, либо по почте.
-                    img(src="img/mob/diplom2-min.jpg" alt="doc")
+                    picture
+                        source(srcset="img/mob/diplom2-min.webp" type="image/webp")
+                        img(src="img/mob/diplom2-min.jpg" loading="lazy" alt="doc")
                 .proof-docs__section
                     h4 Удостоверение о повышении квалификации
                     p Удостоверение о повышении квалификации выдается при прохождении <span>программы повышения квалификации</span> (не менее 16 ак.ч.) Сдаётся выпускной экзамен.
-                    img(src="img/mob/diplom-min.jpg" alt="doc")
+                    picture
+                        source(srcset="img/mob/diplom-min.webp" type="image/webp")
+                        img(src="img/mob/diplom-min.jpg" loading="lazy" alt="doc")

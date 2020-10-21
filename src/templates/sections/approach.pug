@@ -35,28 +35,33 @@ section.approach.box#approach
                     span курсы эффективны
 
         .approach__video
-            iframe(src="https://www.youtube.com/embed/-tUS0BSeFzg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+            iframe(id="promo-video" loading="lazy" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
 
     .approach__container.box__container
         .gallery
             .gallery__item._big
                 picture
+                    source(srcset="img/desktop/gallery/big.webp" type="image/webp" media="(min-width: 1280px)")
                     source(srcset="img/desktop/gallery/big.jpg" media="(min-width: 1280px)")
-                    img(src="img/mob/gallery/big.jpg" alt="pic")
+                    img(loading="lazy" src="img/mob/gallery/big.jpg" alt="pic")
 
             .gallery__item
                 picture
+                    source(srcset="img/desktop/gallery/1.webp" type="image/webp" media="(min-width: 1280px)")
                     source(srcset="img/desktop/gallery/1.jpg" media="(min-width: 1280px)")
-                    img(src="img/mob/gallery/1.jpg" alt="pic")
+                    img(loading="lazy" src="img/mob/gallery/1.jpg" alt="pic")
             .gallery__item
                 picture
+                    source(srcset="img/desktop/gallery/2.webp" type="image/webp" media="(min-width: 1280px)")
                     source(srcset="img/desktop/gallery/2.jpg" media="(min-width: 1280px)")
-                    img(src="img/mob/gallery/2.jpg" alt="pic")
+                    img(loading="lazy" src="img/mob/gallery/2.jpg" alt="pic")
             .gallery__item
                 picture
+                    source(srcset="img/desktop/gallery/3.webp" type="image/webp" media="(min-width: 1280px)")
                     source(srcset="img/desktop/gallery/3.jpg" media="(min-width: 1280px)")
-                    img(src="img/mob/gallery/3.jpg" alt="pic")
+                    img(loading="lazy" src="img/mob/gallery/3.jpg" alt="pic")
             .gallery__item
                 picture
+                    source(srcset="img/desktop/gallery/4.webp" type="image/webp" media="(min-width: 1280px)")
                     source(srcset="img/desktop/gallery/4.jpg" media="(min-width: 1280px)")
-                    img(src="img/mob/gallery/4.jpg" alt="pic")
+                    img(loading="lazy" src="img/mob/gallery/4.jpg" alt="pic")

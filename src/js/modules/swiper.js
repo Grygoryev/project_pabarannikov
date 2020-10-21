@@ -1,5 +1,4 @@
-// import Swiper from '../libs/swiper.min.js';
-// import Swiper from 'https://unpkg.com/swiper/swiper-bundle.esm.browser.min.js'
+import Swiper from 'swiper'
 
 export const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
   spaceBetween: 20,
@@ -7,20 +6,21 @@ export const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
   pagination: {
     el: '.swiper-feedback-pagination',
   },
-
+  loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-feedback-button-next',
+    prevEl: '.swiper-feedback-button-prev',
   },
 })
 
 export const feedbackSwiper2 = new Swiper('.swiper-teachers-container', {
   spaceBetween: 20,
   pagination: {
-  el: '.swiper-teachers-pagination',
+    el: '.swiper-teachers-pagination',
   },
+  loop: true,
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-teacher-button-next',
+    prevEl: '.swiper-teacher-button-prev',
   },
 })

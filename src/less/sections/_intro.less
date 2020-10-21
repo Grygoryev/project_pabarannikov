@@ -27,10 +27,6 @@
     width: 70%;
     .flex(space-between, center);
 
-    //.min-tablet({
-    //  align-items: flex-end;
-    //});
-
     .min-desktop({
       width: 58%;
     });
@@ -75,6 +71,12 @@
   &__apply-btn {
     color: @color-white;
     background-color: @color-red;
+    display: block;
+    margin-bottom: 0;
+
+    &:hover {
+      color: @color-white;
+    }
 
     .min-tablet({
       padding: 15px 30px;
@@ -166,3 +168,13 @@
     });
   }
 }
+//
+//.webp .intro__container {
+//  background-image: url("../img/mob/intro-bg@2x.webp");
+//}
+//
+//.min-desktop({
+//  .webp .intro__container {
+//    background-image: url("../img/desktop/introbg@2x.webp");
+//  }
+//});

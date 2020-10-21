@@ -1,3 +1,81 @@
 .footer {
+    padding-top: 43px;
+    padding-bottom: 40px;
+    background-color: #333333;
 
+    &__container {
+      padding-left: 30px;
+      padding-right: 30px;
+
+      .min-desktop({
+        .flex(space-between, flex-start);
+        padding: 0;
+      })
+    }
+
+    a {
+      .font(16px, 20px);
+      font-weight: bold;
+      color: @color-white;
+      display: block;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+
+      .min-desktop({
+        margin-bottom: 40px;
+        text-align: left;
+      });
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &__section {
+      text-align: center;
+      padding: 0 15px;
+
+      &._docs {
+        .min-desktop({
+          margin-right: auto;
+          max-width: 255px;
+        })
+      }
+    
+      &._contact-info {
+        padding-left: 0;
+        
+        a {
+          margin-bottom: 10px;
+        }
+
+        img {
+          width: 100%;
+          max-width: 230px;
+          margin: 30px auto 0;
+          display: block;
+
+          .min-desktop({
+            margin-left: 0;
+          })
+        }
+      }
+
+      .min-tablet({
+        margin-bottom: 40px;
+      })
+    }
+
+    &__copyright {
+      margin-top: 30px;
+      text-transform: uppercase;
+      text-align: center;
+      color: @color-white;
+      line-height: 1.25;
+
+      .min-desktop({
+        font-size: 12px;
+        text-align: left;
+      })
+    }
 }
