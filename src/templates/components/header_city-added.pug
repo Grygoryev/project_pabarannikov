@@ -41,6 +41,23 @@ header.header.box#header
             li школа рисования
             li школа фотографии
             li курсы для детей
+        
+        ul.cities-list#cities
+            .cities-list__close-btn.close-btn#cities-close-btn
+               .close-btn__container
+                    span
+                    span
+                    span
+            li Санкт-Петербург
+            li Москва
+            li Тверь
+            li Калининград
+            li Тамбов
+            li Сочи
+            li Псков
+            li Великий Новгород
+            li Ставрополь
+            li Кисловодск
 
         nav.nav
             .nav__links
@@ -48,7 +65,14 @@ header.header.box#header
                     span Факультеты
                 a.nav__link(href="#feedbacks" data-link-to="feedbacks") О нас 
                 a.nav__link(href="#skillproof" data-link-to="skillproof") Акции
-                a.nav__link(href="#teachers" data-link-to="teachers") Контакты
+
+            .nav__city-choice
+                .nav__link._cities#cities-link 
+                    span Санкт-Петербург
+                .nav__adress-box 
+                    svg
+                        use(href="#icon-geopin" xlink:href="#icon-geopin")
+                    p.nav__adress большой пр.пс., д 43
 
             a(href="tel:88005008274").nav__phone 8 800 500-82-74
 

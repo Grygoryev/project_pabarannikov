@@ -67,11 +67,10 @@
     }
   }
 
-  &__price {
+  &__price-box {
     .font(20px, 24px);
     font-family: @font-montserrat-bold;
     color: @color-white;
-
     margin-bottom: 20px;
 
     .min-desktop({
@@ -99,6 +98,66 @@
           bottom: 5px;
           right: -12px;
         });
+      }
+    }
+
+    &._discounted {
+      text-align: center;
+      max-width: 320px;
+      margin: 0 auto 30px;
+
+      h4 {
+        .font(20px, 24px);
+        margin-bottom: 20px;
+        color: @color-yellow;
+        text-align: left;
+      }
+
+      p {
+        .font(20px, 24px);
+        color: @color-white;
+        font-family: @font-montserrat-light;
+        text-align: left;
+      }
+    }
+  }
+
+  &__discount-summ {
+    border: 5px solid  @color-yellow;
+    color: @color-yellow;
+    border-radius: 15px;  
+    padding: 20px;
+    .flex(center, center);
+    .font(40px, 48px);
+    width: 100%;
+    margin: 0 auto 28px;
+  }
+
+  &__price-new {
+    .font(60px, 70px);
+    font-family: @font-montserrat-bold;
+    color: @color-yellow;
+    text-align: left;
+  }
+
+  &__price-old {
+    .font(25px, 30px);
+    font-family: @font-montserrat-bold;
+    color: @color-yellow;
+    text-align: left;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -7px;
+        width: calc(100% + 13px);
+        height: 1px;
+        background-color: @color-yellow;
+        transform: translateY(-50%) rotate(17deg);
       }
     }
   }
@@ -171,6 +230,10 @@
     .font(12px, 16px);
     color: @color-white;
     text-align: center;
+    margin-bottom: 21px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 
     a {
       text-decoration: underline;
@@ -179,9 +242,9 @@
 
     .min-desktop({
       order: 2;
-      margin-bottom: 21px;
       max-width: 285px;
       text-align: left;
+      margin-left: 0;
     });
   }
 }

@@ -6,13 +6,8 @@ import { navController } from "./modules/navController";
 import { programStageController } from "./modules/programStageController";
 import { feedbackSwiper } from "./modules/swiper"
 import { feedbackSwiper2 } from "./modules/swiper"
-
-const iFrameDelay = () => {
-  const iframe = document.getElementById('promo-video')
-  setTimeout(() => {
-    iframe.src = 'https://www.youtube.com/embed/-tUS0BSeFzg'
-  }, 5000)
-}
+import { bannerController } from "./modules/bannerController"
+import { iFrameDelay } from "./modules/iFrameDelay"
 
 function init() {
   courseSwitcher();
@@ -22,6 +17,7 @@ function init() {
   navController();
   proofDocs();
   iFrameDelay();
+  bannerController();
 }
 
 init()

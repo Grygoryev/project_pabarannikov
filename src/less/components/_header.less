@@ -5,6 +5,23 @@
   width: 100%;
   z-index: 555;
 
+  .min-desktop({
+    position: relative;
+  });
+
+  &__container {
+    padding-left: 24px;
+    padding-right: 24px;
+    .flex(space-between, flex-end);
+
+    .min-desktop({
+      align-items: center;
+      justify-content: flex-start;
+      padding-left: 5px;
+      padding-right: 5px;
+    });
+  }
+
   &__apply-btn {
     opacity: 0;
     position: fixed;
@@ -19,24 +36,11 @@
     width: auto;
     transition: 300ms opacity;
 
-
     &._visible {
       z-index: 4998;
       opacity: 1;
-      // transition: 300ms opacity;
+      transition: 300ms opacity;
     }
-  }
-
-  &__container {
-    padding-left: 24px;
-    padding-right: 24px;
-    .flex(space-between, flex-end);
-
-    .min-desktop({
-      align-items: center;
-      padding-left: 5px;
-      padding-right: 5px;
-    });
   }
 
   .logo {
@@ -116,36 +120,118 @@
     transform: none;
     position: static;
     padding-top: 0;
+    padding-bottom: 0;
     width: auto;
     .flex(space-between, center);
+    flex-grow: 1;
   });
 
   &__links {
-    .flex_column();
+    .flex(center, center, column nowrap);
     margin-bottom: 30px;
 
     .min-desktop({
       flex-flow: row nowrap;
       margin-bottom: 0;
       margin-right: 50px;
+      margin-left: auto;
     });
   }
 
-  &-link {
+  &__adress-box {
+    position: relative;
+    text-transform: uppercase;
+    .flex(center, center);
+    margin-bottom: 10px;
+
+    svg {
+      flex-grow: 1;
+      max-width: 18px;
+      height: 26px;
+      margin-right: 5px;
+    }
+  }
+
+  &__link {
     color: @color-black;
     text-transform: uppercase;
     margin-bottom: 20px;
-
     cursor: pointer;
 
     &:hover {
-      color: rgba(@color-black, 0.85);
+      color: @color-red;
     }
 
     .min-desktop({
       margin-right: 16px;
+      padding-right: 20px;
       margin-bottom: 0;
     });
+
+    &._faculties,
+    &._cities {
+      position: relative;
+
+      &:hover {
+        color: @color-red;
+
+        span::after {
+          border-color: @color-red;
+        }
+      }
+
+      span {
+        display: inline-block;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 7px;
+          height: 7px;
+          top: 35%;
+          right: -15px;
+          transform: translateY(-50%) rotate(-45deg);
+          border-left: 2px solid @color-black;
+          border-bottom: 2px solid @color-black;
+          transition: 300ms transform;
+
+          .min-desktop({
+            right: 3px;
+          })
+        }
+      }
+    }
+
+    &._faculties._active,
+    &._cities._active {
+      color: @color-red;
+
+      span::after {
+        transform: translateY(-50%) rotate(135deg);
+        transform-origin: 50% 70%;
+        border-color: @color-red;
+      }
+    }
+
+    &._cities {
+      .font(13px, 16px);
+      
+      .min-desktop({
+        display: block;
+      });
+
+      span {
+        position: relative;
+
+        &::after {
+          right: -15px;
+
+          .min-desktop({
+            right: 25px;
+          });
+        }
+      }
+    }
   }
 
   &__phone {
@@ -158,6 +244,7 @@
     .min-desktop({
       margin-bottom: 0;
       margin-right: 55px;
+      margin-left: auto;
     });
   }
 
@@ -166,7 +253,7 @@
     color: @color-white;
     max-width: 80%;
     margin: 0 auto;
-    display: block;
+    display: none;
 
     &:hover {
       color: @color-white;
@@ -180,11 +267,13 @@
       .font(16px, 20px);
       max-width: none;
       padding: 8px 16px;
+      margin: 0;
+      display: block;
     });
   }
 }
 
-header._opened {
+.header._opened {
 
   .nav {
     transform: translateX(25%);
@@ -217,6 +306,64 @@ header._opened {
       &:last-child {
         transform: translateX(-50%) rotate(-45deg);
       }
+    }
+  }
+}
+
+.nav-faculties,
+.cities-list {
+  padding: 70px 36px 5px;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: @color-white;
+  z-index: -1;
+  overflow-y: scroll;
+  opacity: 0;
+  transition: 300ms opacity;
+
+  .min-desktop({
+    max-width: 323px;
+    padding-top: 24px;
+    width: 100%;
+    height: 440px;
+    border: 2px solid @color-red;
+    position: absolute;
+  });
+
+  &._opened {
+    opacity: 1;
+    z-index: 5001;
+    transition: 300ms opacity;
+  }
+
+  &__close-btn {
+    position: fixed;
+    top: 25px;
+    right: 19px;
+    z-index: 5005;
+
+    .min-desktop({
+      display: none;
+    })
+  }
+
+  li {
+    .font(16px, 20px);
+    color: @color-black;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover {
+      color: @color-red;
+    }
+
+    &._active {
+      color: @color-red;
+      font-weight: bold;
     }
   }
 }
