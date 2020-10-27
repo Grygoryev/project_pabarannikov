@@ -1,4 +1,6 @@
-import Swiper from 'swiper'
+import Swiper, { Navigation, Pagination } from 'swiper'
+
+Swiper.use([Navigation, Pagination]);
 
 export const feedbackSwiper = new Swiper('.swiper-feedbacks-container', {
   spaceBetween: 20,

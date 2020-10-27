@@ -23,6 +23,7 @@
   }
 
   &__apply-btn {
+    visibility: hidden;
     opacity: 0;
     position: fixed;
     z-index: -1;
@@ -37,6 +38,7 @@
     transition: 300ms opacity;
 
     &._visible {
+      visibility: visible;
       z-index: 4998;
       opacity: 1;
       transition: 300ms opacity;
@@ -102,8 +104,10 @@
 }
 
 .nav {
-  background-color: @color-white;
+  display: none;
+  visibility: hidden;
   position: fixed;
+  background-color: @color-white;
   left: 0;
   top: 0;
   width: 100%;
@@ -117,6 +121,7 @@
 
   .min-desktop({
     opacity: 1;
+    visibility: visible;
     transform: none;
     position: static;
     padding-top: 0;
@@ -225,10 +230,6 @@
 
         &::after {
           right: -15px;
-
-          .min-desktop({
-            right: 25px;
-          });
         }
       }
     }
@@ -276,6 +277,9 @@
 .header._opened {
 
   .nav {
+    display: block;
+    visibility: visible;
+    position: fixed;
     transform: translateX(25%);
     opacity: 1;
     width: 100%;
@@ -323,6 +327,7 @@
   overflow-y: scroll;
   opacity: 0;
   transition: 300ms opacity;
+  visibility: hidden;
 
   .min-desktop({
     max-width: 323px;
@@ -334,6 +339,7 @@
   });
 
   &._opened {
+    visibility: visible;
     opacity: 1;
     z-index: 5001;
     transition: 300ms opacity;
@@ -344,6 +350,7 @@
     top: 25px;
     right: 19px;
     z-index: 5005;
+    cursor: pointer; //если убрать, то в старых iOS не будет работать событие click
 
     .min-desktop({
       display: none;

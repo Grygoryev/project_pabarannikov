@@ -1,6 +1,7 @@
 export const iFrameDelay = () => {
-  const iframe = document.getElementById('promo-video')
+  const iframe = document.getElementById('promo-video'),
+        link = iframe.dataset.src
   setTimeout(() => {
-    iframe.src = 'https://www.youtube.com/embed/-tUS0BSeFzg'
+    iframe.src = link
   }, 2000)
 }

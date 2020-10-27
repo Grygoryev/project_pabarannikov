@@ -149,6 +149,7 @@
 
       &._author {
         order: 2;
+        position: relative;
       }
 
       &._task {
@@ -168,14 +169,12 @@
 
   &__message-box {
     padding: 19px 11px 17px 24px;
-    position: absolute;
-    top: -115px;
-    left: 20px;
+    position: relative;
+    margin-top: -115px;
     max-width: 258px;
     width: 100%;
 
     .min-mob-s({
-      left: 30px;
       max-width: 300px;
       min-height: 132px;
       .font(14px);
@@ -183,13 +182,16 @@
     });
 
     .min-desktop({
+      position: relative;
       border: 3px solid @color-magenta;
       max-width: 506px;
-      left: auto;
-      right: 40px;
-      top: -60px;
       .font(16px, 20px);
       padding: 30px 55px 33px 65px;
+      left: auto;
+      right: -37px;
+      top: -33px;
+      margin-left: auto;
+      margin-top: -150px;
     });
 
     &::before {
@@ -213,19 +215,16 @@
   }
 
   &__ava {
-    background-image: url('../img/mob/fb-author.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 56px;
     height: 56px;
     margin-right: 10px;
     flex-shrink: 0;
+    border-radius: 50%;
 
     .min-desktop({
       position: absolute;
-      right: 100px;
-      top: 125px;
+      right: -10px;
+      top: -10px;
     });
   }
 

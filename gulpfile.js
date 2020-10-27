@@ -18,7 +18,7 @@ const gulp = require('gulp'),
 gulp.task('pug', function () {
   return gulp.src('src/templates/*.pug')
       .pipe(pug({
-        pretty: true
+        pretty: false
       }))
       .pipe(debug({title: 'working on'}))
       .pipe(gulp.dest('build'))
@@ -50,7 +50,7 @@ gulp.task('img', function () {
       .pipe(debug({title: 'working on'}))
       .pipe(imgmin({
         pngquant: true,
-        optipng: false,
+        optipng: true,
         zopflipng: true,
         jpegRecompress: false,
         mozjpeg: true,

@@ -10,7 +10,7 @@ section.course-type.box
             input(type="checkbox" id="isCourseFormOffline" name="isCourseFormOffline" hidden)
             .course-switch__offline.title-common Офлайн
         .course-type__benefits#course-type__benefits
-            .course-type__benefits-online
+            .course-type__benefits-online#course-benefits-online(data-background-mob="/img/mob/course_online.png" data-background-desktop="/img/desktop/course_online.png")
                 ul._online
                     li.title Онлайн
                     li
@@ -20,7 +20,7 @@ section.course-type.box
                         span Чат с преподавателем
                     li
                         span Живая трансляция
-            .course-type__benefits-offline
+            .course-type__benefits-offline#course-benefits-offline(data-background-mob="/img/mob/course_offline.png" data-background-desktop="/img/desktop/course_offline.png")
                 ul._offline
                     li.title Оффлайн
                     li

@@ -1,13 +1,13 @@
 doctype html
 head
-  link(rel="stylesheet" href="css/main.css")
   meta(name='viewport', content='width=device-width, initial-scale=1')
   meta(http-equiv='Content-Type', content='text/html' charset='utf-8')
   meta(http-equiv='x-ua-compatible', content='ie=edge')
   link(rel="shortcut icon" type="image/png" href="/img/icon-logo.svg")
+  link(rel="stylesheet" href="css/main.css")
 
 body
-  include ./components/banner.pug
+  //- include ./components/special-offer.pug
   //- include ./components/header.pug
   include ./components/header_city-added.pug
   include ./sections/intro.pug
@@ -26,5 +26,4 @@ body
   include ./components/footer.pug
   include ./components/icons.pug
 
-  //- script(src="https://unpkg.com/swiper/swiper-bundle.min.js")
   script(type="text/javascript" src="js/scripts-bundled.js")

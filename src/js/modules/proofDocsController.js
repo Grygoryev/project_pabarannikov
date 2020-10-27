@@ -1,4 +1,4 @@
-export const proofDocs = () => {
+export const proofDocsController = () => {
   const docs = document.getElementById('proof-docs'),
     openBtn = document.getElementById('skillproof-show-docs-btn'),
     closeBtn = document.getElementById('skillproof-hide-docs-btn'),
