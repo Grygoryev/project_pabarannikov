@@ -9,6 +9,8 @@ import { feedbackSwiper2 } from "./modules/swiper"
 import { specialOfferController } from "./modules/specialOfferController"
 import { iFrameDelay } from "./modules/iFrameDelay"
 import { imageLoadDelay } from "./modules/imageLoadDelay";
+import { scrollArrow } from "./modules/scrollArrow";
+import { emailPopupController } from "./modules/emailPopupController";
 
 function init() {
   imageLoadDelay();
@@ -20,6 +22,8 @@ function init() {
   proofDocsController();
   iFrameDelay();
   specialOfferController();
+  scrollArrow();
+  emailPopupController();
 }
 
 init()

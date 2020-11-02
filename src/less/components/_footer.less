@@ -1,11 +1,12 @@
 .footer {
-    padding-top: 43px;
+    padding-top: 40px;
     padding-bottom: 40px;
     background-color: #333333;
 
     &__container {
       padding-left: 30px;
       padding-right: 30px;
+
 
       .min-desktop({
         .flex(space-between, flex-start);
@@ -14,17 +15,20 @@
     }
 
     a {
-      .font(16px, 20px);
-      font-family: @font-montserrat-bold;
+      .font(10px, 12px);
+      font-family: @font-montserrat;
       color: @color-white;
       display: block;
       margin-bottom: 20px;
       text-transform: uppercase;
 
       .min-desktop({
-        margin-bottom: 40px;
         text-align: left;
       });
+
+      &:hover {
+        opacity: 0.7;
+      }
 
       &:last-child {
         margin-bottom: 0;
@@ -41,18 +45,36 @@
           max-width: 255px;
         })
       }
+
+      &._master-class {
+        .min-desktop({
+          margin-right: 94px;
+        });
+      }
+
+      &._about {
+        .min-desktop({
+          margin-right: 94px;
+        });
+      }
     
       &._contact-info {
         padding-left: 0;
-        
+        .font(10px, 12px);
+
+        .min-desktop({
+          margin-right: 79px;
+        });
+
         a {
-          margin-bottom: 10px;
+          margin-bottom: 30px;
+          font-family: @font-montserrat-semi-bold;
         }
 
         img {
           width: 100%;
-          max-width: 230px;
-          margin: 30px auto 0;
+          max-width: 173px;
+          margin: 45px auto 0;
           display: block;
 
           .min-desktop({
@@ -71,7 +93,8 @@
       text-transform: uppercase;
       text-align: center;
       color: @color-white;
-      line-height: 1.25;
+      .font(8px, 10px);
+      letter-spacing: 0.2px;
 
       .min-desktop({
         font-size: 12px;

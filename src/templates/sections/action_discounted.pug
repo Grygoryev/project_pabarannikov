@@ -19,7 +19,7 @@ section.action._discounted.box#action
             p к оплате <span class="bold">со скидкой</span>
             .action__price-new 5100 р 
             .action__price-old <span>5600</span> р
-        form.action-form
+        form.action-form#action-form
             .action-form__fields
                 .action-form__field._name
                     input(type="text" placeholder="Ваше имя" name="client-name" id="client-name")
@@ -48,4 +48,4 @@ section.action._discounted.box#action
         
             .action-form__privacy Нажимая кнопку вы даёте свое согласие на обработку ваших персональных данных на условиях и для целей, определенных <a href="#">Политикой конфиденциальности</a>
 
-            .action-form__button.btn-apply оставить заявку
+            button.action-form__button.btn-apply#action-form-apply-btn(type="submit") оставить заявку

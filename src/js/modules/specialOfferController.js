@@ -5,10 +5,11 @@ export const specialOfferController = () => {
         closeBannerBtn = document.getElementById('special-offer-close-btn'),
         isDesktop = window.innerWidth >= 1280
 
+    let isBannerVisible = banner.classList.contains('_visible')
+
     if (!banner) {
         return
     } else {
-        let isBannerVisible = banner.classList.contains('_visible')
 
         mainLogic()
     }

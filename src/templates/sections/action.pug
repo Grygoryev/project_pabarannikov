@@ -16,7 +16,7 @@ section.action.box#action
         .action__price-box
             | к оплате&nbsp;
             .yellow 20160 <span>₽</span>
-        form.action-form
+        form.action-form#action-form
             .action-form__fields
                 .action-form__field._name
                     input(type="text" placeholder="Ваше имя" name="client-name" id="client-name")
@@ -43,6 +43,6 @@ section.action.box#action
 
                     input(type="number" name="client-phone" id="client-phone" placeholder="999 999-99-99")
 
-            .action-form__button.btn-apply оставить заявку
+            .action-form__button.btn-apply(type="submit")#action-form-apply-btn оставить заявку
 
             .action-form__privacy Нажимая кнопку вы даёте свое согласие на обработку ваших персональных данных на условиях и для целей, определенных <a href="#">Политикой конфиденциальности</a>

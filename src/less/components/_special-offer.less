@@ -13,7 +13,11 @@
     &._visible {
         opacity: 1;
         z-index: 10000;
-        padding: 15px 0;
+        padding: 18px 0;
+
+        .min-desktop({
+            padding: 13px 0;
+        });
     }
 
     .min-desktop({
@@ -23,16 +27,22 @@
 
     &__message {
         padding: 23px;
+
+        .min-desktop({
+            padding: 0;
+        });
     }
 
     &__close-btn {
         display: none;
-        width: 30px;
-        height: 30px;
+        width: 11px;
+        height: 11px;
         cursor: pointer;
+        padding: 10px;
 
         span {
             background-color: @color-white;
+            height: 2px;
         }
 
         .min-desktop({
@@ -43,8 +53,8 @@
         })
     }
 
-    p {
-        .font(20px, 24px)
+    &__text {
+        .font(14px, 17px)
     }
 
     &__container {
@@ -62,7 +72,7 @@
             max-width: 1280px;
             width: 100%;
             position: relative;
-            padding-right: 50px;
+            padding-right: 40px;
         })
     }
 
@@ -80,16 +90,17 @@
         }
     }
 
-    &__info {
+    &__discount-summ-box {
         .flex(space-between, center);
 
-        .title {
+        p {
             margin-right: 10px;
+            font-family: @font-montserrat-semi-bold;
         }
     }
 
     &__discount-summ {
-        .font(80px, 97px);
-        font-family: @font-montserrat-bold;
+        .font(50px, 1);
+        font-family: @font-montserrat-semi-bold;
     }
 }

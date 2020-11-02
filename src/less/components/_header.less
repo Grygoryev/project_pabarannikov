@@ -7,6 +7,8 @@
 
   .min-desktop({
     position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
   });
 
   &__container {
@@ -17,6 +19,7 @@
     .min-desktop({
       align-items: center;
       justify-content: flex-start;
+      flex-wrap: nowrap;
       padding-left: 5px;
       padding-right: 5px;
     });
@@ -51,11 +54,15 @@
     cursor: pointer;
 
     svg {
-      height: 34px;
+      height: 32px;
       width: 100%;
-      max-width: 78px;
+      max-width: 160px;
       flex-shrink: 0;
       margin-right: 10px;
+
+      .min-desktop({
+        margin-right: 40px;
+      });
     }
 
     &__text {
@@ -86,8 +93,8 @@
 
   &__container {
     .flex(space-between, flex-start, column nowrap);
-    width: 32px;
-    height: 20px;
+    width: 23px;
+    height: 15px;
   }
 
   .min-desktop({
@@ -95,282 +102,9 @@
   });
 
   span {
-    height: 4px;
+    height: 3px;
     width: 100%;
-    border-radius: 16px;
     background-color: @color-purple;
     transition: 300ms all;
-  }
-}
-
-.nav {
-  display: none;
-  visibility: hidden;
-  position: fixed;
-  background-color: @color-white;
-  left: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 13;
-  padding-top: 120px;
-  padding-bottom: 30px;
-  transform: translateX(100%);
-  opacity: 0;
-  transition: 300ms all;
-
-  .min-desktop({
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    position: static;
-    padding-top: 0;
-    padding-bottom: 0;
-    width: auto;
-    .flex(space-between, center);
-    flex-grow: 1;
-  });
-
-  &__links {
-    .flex(center, center, column nowrap);
-    margin-bottom: 30px;
-
-    .min-desktop({
-      flex-flow: row nowrap;
-      margin-bottom: 0;
-      margin-right: 50px;
-      margin-left: auto;
-    });
-  }
-
-  &__adress-box {
-    position: relative;
-    text-transform: uppercase;
-    .flex(center, center);
-    margin-bottom: 10px;
-
-    svg {
-      flex-grow: 1;
-      max-width: 18px;
-      height: 26px;
-      margin-right: 5px;
-    }
-  }
-
-  &__link {
-    color: @color-black;
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    cursor: pointer;
-
-    &:hover {
-      color: @color-red;
-    }
-
-    .min-desktop({
-      margin-right: 16px;
-      padding-right: 20px;
-      margin-bottom: 0;
-    });
-
-    &._faculties,
-    &._cities {
-      position: relative;
-
-      &:hover {
-        color: @color-red;
-
-        span::after {
-          border-color: @color-red;
-        }
-      }
-
-      span {
-        display: inline-block;
-
-        &::after {
-          content: '';
-          position: absolute;
-          width: 7px;
-          height: 7px;
-          top: 35%;
-          right: -15px;
-          transform: translateY(-50%) rotate(-45deg);
-          border-left: 2px solid @color-black;
-          border-bottom: 2px solid @color-black;
-          transition: 300ms transform;
-
-          .min-desktop({
-            right: 3px;
-          })
-        }
-      }
-    }
-
-    &._faculties._active,
-    &._cities._active {
-      color: @color-red;
-
-      span::after {
-        transform: translateY(-50%) rotate(135deg);
-        transform-origin: 50% 70%;
-        border-color: @color-red;
-      }
-    }
-
-    &._cities {
-      .font(13px, 16px);
-      
-      .min-desktop({
-        display: block;
-      });
-
-      span {
-        position: relative;
-
-        &::after {
-          right: -15px;
-        }
-      }
-    }
-  }
-
-  &__phone {
-    font-family: @font-montserrat-bold;
-    .font(16px, 24px);
-    display: block;
-    color: @color-purple;
-    margin-bottom: 0;
-
-    .min-desktop({
-      margin-bottom: 0;
-      margin-right: 55px;
-      margin-left: auto;
-    });
-  }
-
-  &__apply-btn {
-    background-color: @color-red;
-    color: @color-white;
-    max-width: 80%;
-    margin: 0 auto;
-    display: none;
-
-    &:hover {
-      color: @color-white;
-    }
-
-    .min-tablet({
-      max-width: @mobile;
-    });
-
-    .min-desktop({
-      .font(16px, 20px);
-      max-width: none;
-      padding: 8px 16px;
-      margin: 0;
-      display: block;
-    });
-  }
-}
-
-.header._opened {
-
-  .nav {
-    display: block;
-    visibility: visible;
-    position: fixed;
-    transform: translateX(25%);
-    opacity: 1;
-    width: 100%;
-    max-width: 80%;
-    z-index: 4999;
-  }
-
-  .mobile-menu-btn {
-    z-index: 5000;
-
-    &__container {
-      position: relative;
-    }
-
-    span {
-      position: absolute;
-      top: 50%;
-      transform: translateX(-50%) rotate(45deg);
-
-      &:first-child {
-        transform: translateX(-50%) rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:last-child {
-        transform: translateX(-50%) rotate(-45deg);
-      }
-    }
-  }
-}
-
-.nav-faculties,
-.cities-list {
-  padding: 70px 36px 5px;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: @color-white;
-  z-index: -1;
-  overflow-y: scroll;
-  opacity: 0;
-  transition: 300ms opacity;
-  visibility: hidden;
-
-  .min-desktop({
-    max-width: 323px;
-    padding-top: 24px;
-    width: 100%;
-    height: 440px;
-    border: 2px solid @color-red;
-    position: absolute;
-  });
-
-  &._opened {
-    visibility: visible;
-    opacity: 1;
-    z-index: 5001;
-    transition: 300ms opacity;
-  }
-
-  &__close-btn {
-    position: fixed;
-    top: 25px;
-    right: 19px;
-    z-index: 5005;
-    cursor: pointer; //если убрать, то в старых iOS не будет работать событие click
-
-    .min-desktop({
-      display: none;
-    })
-  }
-
-  li {
-    .font(16px, 20px);
-    color: @color-black;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    cursor: pointer;
-
-    &:hover {
-      color: @color-red;
-    }
-
-    &._active {
-      color: @color-red;
-      font-weight: bold;
-    }
   }
 }

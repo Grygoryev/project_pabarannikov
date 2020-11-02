@@ -5,6 +5,7 @@ export const navController = () => {
     faculties = document.getElementById('faculties'),
     facultiesLink = document.getElementById('faculties-link'),
     facultiesCloseBtn = document.getElementById('faculties-close-btn'),
+    adressBox = document.getElementById('adress-box'),
     cities = document.getElementById('cities'),
     citiesLink = document.getElementById('cities-link'),
     citiesCloseBtn = document.getElementById('cities-close-btn'), 
@@ -15,29 +16,10 @@ export const navController = () => {
     let isFacultiesLink = e.target == facultiesLink || facultiesLink.contains(e.target)
     let isFacultiesOpened = faculties.classList.contains('_opened')
     let isCloseFacultiesButton = e.target == facultiesCloseBtn || facultiesCloseBtn.contains(e.target)
-    let facultiesDeltaLeft = facultiesLink.getBoundingClientRect().left - faculties.offsetWidth / 5
-
-    let isCities = e.target == citiesLink || cities.contains(e.target)
-    let isCitiesLink = e.target == citiesLink || citiesLink.contains(e.target)
-    let isCitiesOpened = cities.classList.contains('_opened')
-    let isCloseCitiesButton = e.target == citiesCloseBtn || citiesCloseBtn.contains(e.target)
-    let citiesDeltaLeft = citiesLink.getBoundingClientRect().left - cities.offsetWidth / 5
+    let facultiesDeltaLeft = facultiesLink.getBoundingClientRect().left - faculties.offsetWidth / 10
 
     if (isDesktop) {
       faculties.style.cssText = `left: ${facultiesDeltaLeft}px; top: 100%;`
-      cities.style.cssText = `left: ${citiesDeltaLeft}px; top: 100%`
-    }
-
-    if (isCitiesLink && !isCitiesOpened) {
-      cities.classList.add('_opened')
-      citiesLink.classList.add('_active')
-      isDesktop ? '' : document.querySelector('html').style.overflowY = 'hidden'
-    }
-
-    if (!isCities && isCitiesOpened || isCloseCitiesButton) {
-      cities.classList.remove('_opened')
-      citiesLink.classList.remove('_active')
-      isDesktop ?  '' : document.querySelector('html').style.overflowY = ''
     }
 
     if (isFacultiesLink && !isFacultiesOpened) {
@@ -50,6 +32,32 @@ export const navController = () => {
       faculties.classList.remove('_opened')
       facultiesLink.classList.remove('_active')
       isDesktop ?  '' : document.querySelector('html').style.overflowY = ''
+    }
+
+    if (cities) {
+      let isCities = e.target == citiesLink || cities.contains(e.target)
+      let isCitiesLink = e.target == citiesLink || citiesLink.contains(e.target)
+      let isCitiesOpened = cities.classList.contains('_opened')
+      let isCloseCitiesButton = e.target == citiesCloseBtn || citiesCloseBtn.contains(e.target)
+      let citiesDeltaLeft = citiesLink.getBoundingClientRect().left
+
+      if (isDesktop) {
+        cities.style.cssText = `left: ${citiesDeltaLeft}px; top: 100%`
+        // citiesLink.style.marginRight = '16px'
+        // cities.style.width = `${adressBox.offsetWidth + citiesLink.offsetWidth + 16}px`
+      }
+
+      if (isCitiesLink && !isCitiesOpened) {
+        cities.classList.add('_opened')
+        citiesLink.classList.add('_active')
+        isDesktop ? '' : document.querySelector('html').style.overflowY = 'hidden'
+      }
+
+      if (!isCities && isCitiesOpened || isCloseCitiesButton) {
+        cities.classList.remove('_opened')
+        citiesLink.classList.remove('_active')
+        isDesktop ?  '' : document.querySelector('html').style.overflowY = ''
+      }
     }
   })
 

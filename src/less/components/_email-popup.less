@@ -1,0 +1,86 @@
+.email-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  transition: 300ms all;
+
+  &__close-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 15px;
+    height: 15px;
+    padding: 10px;
+    cursor: pointer;
+
+    span {
+      height: 2px;
+      background-color: @color-black;
+    }
+  }
+
+  &._visible {
+    display: flex;
+    background-color: rgba(@color-white, 0.2);
+    transition: 300ms all;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__container {
+    padding: 60px 60px 50px;
+    border: 1px solid #333333;
+    background-color: @color-white;
+    max-width: 640px;
+    width: 100%;
+    position: relative;
+
+    .min-desktop({
+      padding: 90px 85px 50px;
+    });
+  }
+
+  &__title {
+    .font(22px, 24px);
+    margin-bottom: 18px;
+
+    .min-desktop({
+      .font(30px, 36px);
+      margin-bottom: 18px;
+    });
+  }
+
+  &__input {
+    .font(18px, 22px);
+    padding: 15px 18px 18px 18px;
+    margin-bottom: 24px;
+    color: #333333;
+    border: 1px solid #333333;
+    cursor: pointer;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba(#333333, 0.5);
+    }
+  }
+
+  &__submit-btn {
+    .font(25px, 1.1);
+    font-family: @font-montserrat-semi-bold;
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    background-color: @color-red;
+    color: @color-white;
+    padding: 14px 57px;
+    cursor: pointer;
+  }
+}

@@ -7,7 +7,6 @@ export const headerController = () => {
         actionSection = document.getElementById('action'),
         isDesktop = window.innerWidth >= 1280
 
-
   if (isDesktop) {
     return 
   } else {

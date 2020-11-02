@@ -1,6 +1,6 @@
 .btn-apply {
   .font(20px);
-  font-family: @font-montserrat-bold;
+  font-family: @font-montserrat-semi-bold;
   letter-spacing: 0.7px;
   text-transform: uppercase;
   color: @color-black;
@@ -18,7 +18,6 @@
 .title-common {
   .font(28px, 32px);
   font-family: @font-montserrat-bold;
-  font-weight: bold;
   color: @color-black;
 
   .min-desktop({
@@ -59,5 +58,25 @@
     &:last-child {
       transform: translateX(-50%) rotate(-45deg);
     }
+  }
+}
+
+.scroll-arrow {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: @color-yellow;
+  border-radius: 50%;
+  transition: 300ms all;
+  cursor: pointer;
+
+  &._visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5001;
   }
 }

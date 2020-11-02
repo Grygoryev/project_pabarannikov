@@ -1,7 +1,26 @@
 .intro {
 
+  &__breadcrumbs {
+    display: none;
+    .font(10px, 12px);
+    color: @color-black;
+    text-transform: uppercase;
+    padding-top: 20px;
+
+    .min-desktop({
+      display: block;
+    });
+
+    a {
+      color: @color-black;
+
+      &:hover {
+        color: @color-red;
+      }
+    }
+  }
+
   &__container {
-    //background-image: url("../img/mob/intro-bg@2x.png");
     background-position: 115% 76%;
     background-repeat: no-repeat;
     background-size: 240px;
@@ -15,10 +34,9 @@
     });
 
     .min-desktop({
-      //background-image: url("../img/desktop/introbg@2x.png");
       background-position: right bottom;
       background-size: 50%;
-      padding-top: 50px;
+      padding-top: 40px;
       padding-bottom: 80px;
     });
   }
@@ -117,11 +135,10 @@
     span {
       transform: scale(0.66);
       position: absolute;
-      right: -10px;
+      right: -15px;
       bottom: 0;
 
       .min-desktop({
-        right: -15px;
         bottom: 5px;
       });
     }
@@ -132,7 +149,6 @@
     font-family: @font-montserrat-bold;
     font-weight: bold;
     color: @color-red;
-
     position: relative;
     display: inline-block;
 
@@ -144,7 +160,7 @@
     span {
       transform: scale(0.44);
       position: absolute;
-      right: -25px;
+      right: -28px;
       top: -10px;
 
       .min-desktop({

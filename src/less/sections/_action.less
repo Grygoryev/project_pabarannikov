@@ -7,30 +7,35 @@
 
     .min-desktop({
       .flex(space-between, flex-end, row wrap);
-      padding-top: 80px;
-      padding-bottom: 110px;
+      padding-top: 40px;
+      padding-bottom: 40px;
     });
   }
 
   &__title {
     color: @color-white;
+    font-family: @font-montserrat-semi-bold;
 
     .flex_column();
     margin-bottom: 21px;
 
     .min-desktop({
       width: 100%;
-      margin-bottom: 33px;
+      margin-bottom: 37px;
     })
   }
 
   h3 {
     color: @color-white;
-    .font(20px);
-    font-family: @font-montserrat-bold;
+    .font(28px, 34px);
+    font-family: @font-montserrat-semi-bold;
 
     .flex_column();
     margin-bottom: 16px;
+
+    .min-desktop({
+      margin-bottom: 27px;
+    });
   }
 
   &__text {
@@ -46,7 +51,7 @@
   li {
     .font(16px, 20px);
     font-family: @font-montserrat-light;
-    color: rgba(@color-white, 0.7);
+    color: @color-white;
 
     position: relative;
     margin-bottom: 15px;
@@ -63,7 +68,7 @@
     }
 
     span {
-      font-family: @font-montserrat;
+      font-family: @font-montserrat-semi-bold;
     }
   }
 
@@ -104,13 +109,24 @@
     &._discounted {
       text-align: center;
       max-width: 320px;
-      margin: 0 auto 30px;
+      margin: 0 auto 30px 0;
+
+      .min-desktop({
+        margin-left: auto;
+      });
 
       h4 {
         .font(20px, 24px);
         margin-bottom: 20px;
         color: @color-yellow;
         text-align: left;
+
+        .min-desktop({
+          .font(20px, 24px);
+          font-family: @font-montserrat-semi-bold;
+          order: 1;
+          margin-bottom: 10px;
+        });
       }
 
       p {
@@ -118,6 +134,11 @@
         color: @color-white;
         font-family: @font-montserrat-light;
         text-align: left;
+
+        .min-desktop({
+          order: 4;
+          margin-bottom: 5px;
+        });
       }
     }
   }
@@ -126,11 +147,22 @@
     border: 5px solid  @color-yellow;
     color: @color-yellow;
     border-radius: 15px;  
-    padding: 20px;
+    padding: 10px;
     .flex(center, center);
     .font(40px, 48px);
+    font-family: @font-montserrat-semi-bold;
     width: 100%;
+    max-width: 320px;
     margin: 0 auto 28px;
+
+    .min-desktop({
+      order: 2;
+      .font(50px, 1);
+      padding-top: 20px;
+      padding-bottom: 20px;
+      max-width: 284px;
+      margin: 0 auto 64px 0;
+    });
   }
 
   &__price-new {
@@ -138,13 +170,24 @@
     font-family: @font-montserrat-bold;
     color: @color-yellow;
     text-align: left;
+    
+    .min-desktop({
+      order: 5;
+      .font(56px, 68px);
+    });
   }
 
   &__price-old {
     .font(25px, 30px);
-    font-family: @font-montserrat-bold;
+    font-family: @font-montserrat-semi-bold;
     color: @color-yellow;
     text-align: left;
+
+    .min-desktop({
+      order: 3;
+      .font(20px, 24px);
+      margin-bottom: 5px;
+    });
 
     span {
       position: relative;
@@ -218,11 +261,15 @@
 
   &__button {
     background-color: @color-yellow;
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
+    display: block;
+    margin: 0 auto 10px;
+    width: auto;
 
     .min-desktop({
       order: 3;
       width: fit-content;
+      margin-left: 0;
     });
   }
 

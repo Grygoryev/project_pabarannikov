@@ -7,7 +7,7 @@ head
   link(rel="stylesheet" href="css/main.css")
 
 body
-  //- include ./components/special-offer.pug
+  include ./components/special-offer.pug
   //- include ./components/header.pug
   include ./components/header_city-added.pug
   include ./sections/intro.pug
@@ -20,10 +20,12 @@ body
   include ./sections/skillproof.pug
   include sections/teachers.pug
   include sections/approach.pug
-  include sections/action.pug
+  //include sections/action.pug
   include sections/action_discounted.pug
 
   include ./components/footer.pug
   include ./components/icons.pug
+  include ./components/email-popup
+  #scroll-arrow.scroll-arrow
 
   script(type="text/javascript" src="js/scripts-bundled.js")

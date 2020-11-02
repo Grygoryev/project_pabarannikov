@@ -3,10 +3,7 @@ header.header.box#header
         a(href="/")#logo.logo
             svg
                 use(href="#icon-logo" xlink:href="#icon-logo")
-            p.logo__text
-                span международная
-                span.bold школа
-                span.bold профессий
+
         a(href="").nav-link(data-link-to="action").header__apply-btn#header-sticky-btn Оставить заявку
         .mobile-menu-btn#mobile-menu-btn
             .mobile-menu-btn__container
@@ -48,7 +45,7 @@ header.header.box#header
                     span
                     span
                     span
-            li Санкт-Петербург
+            a(href="geo:37.786971,-122.399677;u=35") Санкт-Петербург
             li Москва
             li Тверь
             li Калининград
@@ -64,18 +61,12 @@ header.header.box#header
                 a().nav__link._faculties#faculties-link
                     span Факультеты
                 a.nav__link(href="#feedbacks" data-link-to="feedbacks") О нас 
-                a.nav__link(href="#skillproof" data-link-to="skillproof") Акции
-
-            .nav__city-choice
-                .nav__link._cities#cities-link 
+                a.nav__link._stocks(href="#skillproof" data-link-to="skillproof") Акции
+                a.nav__link._cities#cities-link
                     span Санкт-Петербург
-                .nav__adress-box 
+                .nav__adress-box#adress-box
                     svg
                         use(href="#icon-geopin" xlink:href="#icon-geopin")
-                    p.nav__adress большой пр.пс., д 43
-
-            a(href="tel:88005008274").nav__phone 8 800 500-82-74
-
-            a(href="#action" data-link-to="action").nav-link.nav__apply-btn.btn-apply Записаться
-
-
+                    p.nav__adress большой пр.пс., <br/> д 43
+                a(href="tel:88005008274").nav__phone 8 800 500-82-74
+                a(href="#action" data-link-to="action").nav-link.nav__apply-btn.btn-apply Записаться
